@@ -18,6 +18,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         print("Début")
     }
     
+    
+    
     @IBOutlet weak var rectangleDown: UIStackView!
     @IBOutlet weak var rectangleUp: UIStackView!
     @IBOutlet weak var doubleSquareUp: UIStackView!
@@ -30,9 +32,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     @IBOutlet weak var imageSquareDownLeft: UIImageView!
     @IBOutlet weak var imageSquareDownRight: UIImageView!
     
-    
-    
-    
     @IBOutlet weak var selected01: UIImageView!
     @IBOutlet weak var selected02: UIImageView!
     @IBOutlet weak var selected03: UIImageView!
@@ -40,7 +39,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     @IBOutlet weak var button01: UIButton!
     @IBOutlet weak var button02: UIButton!
     @IBOutlet weak var button03: UIButton!
-   
     
     @IBAction func importImageSquareUpRight(_ sender: UIButton) {
         rank = 1
@@ -228,5 +226,18 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         button03.alpha = 0.1
     }
     
+    @IBAction func SwipeUp(_ sender: UISwipeGestureRecognizer) {
+        print("UP")
+        /*
+        let items = [profileImageView.image]
+        let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
+        present(ac, animated: true)
+        */
+    }
+    
+    
+    @IBAction func SwipeRight(_ sender: UISwipeGestureRecognizer) {
+        print("Right")
+    }
 }
 

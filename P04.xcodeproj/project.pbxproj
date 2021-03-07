@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0415BFC525F5853E0091416C /* ActivityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415BFC425F5853E0091416C /* ActivityController.swift */; };
 		043C9F5625F2A2C800D13F0E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043C9F5525F2A2C800D13F0E /* AppDelegate.swift */; };
 		043C9F5825F2A2C800D13F0E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043C9F5725F2A2C800D13F0E /* SceneDelegate.swift */; };
 		043C9F5A25F2A2C800D13F0E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043C9F5925F2A2C800D13F0E /* ViewController.swift */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0415BFC425F5853E0091416C /* ActivityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityController.swift; sourceTree = "<group>"; };
 		043C9F5225F2A2C800D13F0E /* P04.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = P04.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		043C9F5525F2A2C800D13F0E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		043C9F5725F2A2C800D13F0E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,7 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				044D5AB025F402E800BC77C1 /* Model */,
-				044D5AA125F3E62C00BC77C1 /* Controler */,
+				044D5AA125F3E62C00BC77C1 /* Controller */,
 				044D5AA225F3E71E00BC77C1 /* View */,
 				044D5AA325F3E74400BC77C1 /* Other Files */,
 				043C9F6325F2A2CA00D13F0E /* Info.plist */,
@@ -136,12 +138,13 @@
 			path = P04UITests;
 			sourceTree = "<group>";
 		};
-		044D5AA125F3E62C00BC77C1 /* Controler */ = {
+		044D5AA125F3E62C00BC77C1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				043C9F5925F2A2C800D13F0E /* ViewController.swift */,
+				0415BFC425F5853E0091416C /* ActivityController.swift */,
 			);
-			path = Controler;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		044D5AA225F3E71E00BC77C1 /* View */ = {
@@ -312,6 +315,7 @@
 				043C9F5A25F2A2C800D13F0E /* ViewController.swift in Sources */,
 				044D5AB225F4030300BC77C1 /* Application.swift in Sources */,
 				043C9F5625F2A2C800D13F0E /* AppDelegate.swift in Sources */,
+				0415BFC525F5853E0091416C /* ActivityController.swift in Sources */,
 				043C9F5825F2A2C800D13F0E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -70,7 +69,7 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instagrid" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iSU-a6-u1q">
-                                <rect key="frame" x="60" y="60" width="200" height="66.5"/>
+                                <rect key="frame" x="60" y="20" width="200" height="66.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="OCw-zH-9uc"/>
                                     <constraint firstAttribute="width" secondItem="iSU-a6-u1q" secondAttribute="height" multiplier="3:1" id="jfg-Pc-BYA"/>
@@ -331,17 +330,22 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.71360510590000004" green="0.84258151049999996" blue="0.90132403370000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="iSU-a6-u1q" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3fx-0v-pzk"/>
                             <constraint firstItem="X9B-aD-RUb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="JWc-Vc-8qI"/>
                             <constraint firstAttribute="bottomMargin" secondItem="Bj1-oJ-Ay5" secondAttribute="bottom" constant="20" id="Kbj-cR-vJf"/>
                             <constraint firstItem="hlS-th-hcE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MGa-3r-4SG"/>
-                            <constraint firstItem="iSU-a6-u1q" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="MmS-jb-f4i"/>
+                            <constraint firstItem="iSU-a6-u1q" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="QNP-4B-BDi"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="X9B-aD-RUb" secondAttribute="trailing" constant="40" id="XxM-E6-gsd"/>
                             <constraint firstItem="hlS-th-hcE" firstAttribute="top" secondItem="X9B-aD-RUb" secondAttribute="bottom" constant="88" id="iav-W0-G67"/>
                             <constraint firstItem="Bj1-oJ-Ay5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oKw-HP-wn4"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="hlS-th-hcE" secondAttribute="bottom" constant="20" id="wPf-oh-Bdd"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="p4w-9F-M16" appends="YES" id="I0d-j5-L4x"/>
+                            <outletCollection property="gestureRecognizers" destination="Vg8-P9-q2W" appends="YES" id="6zA-Td-Fw0"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="Button01" destination="pib-2h-Ax0" id="NzS-Em-VaS"/>
@@ -363,6 +367,16 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="up" id="p4w-9F-M16">
+                    <connections>
+                        <action selector="SwipeUp:" destination="BYZ-38-t0r" id="s0C-z8-3a4"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="Vg8-P9-q2W">
+                    <connections>
+                        <action selector="SwipeRight:" destination="BYZ-38-t0r" id="pmr-r1-woF"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-196.875" y="91.901408450704224"/>
         </scene>
