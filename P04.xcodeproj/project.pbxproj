@@ -15,6 +15,13 @@
 		043C9F6225F2A2CA00D13F0E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 043C9F6025F2A2CA00D13F0E /* LaunchScreen.storyboard */; };
 		043C9F6D25F2A2CB00D13F0E /* P04Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043C9F6C25F2A2CB00D13F0E /* P04Tests.swift */; };
 		043C9F7825F2A2CB00D13F0E /* P04UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043C9F7725F2A2CB00D13F0E /* P04UITests.swift */; };
+		043C9F8A25F2DD2800D13F0E /* Delm-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 043C9F8825F2DD2800D13F0E /* Delm-Medium.otf */; };
+		043C9F8B25F2DD2800D13F0E /* Delm-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 043C9F8825F2DD2800D13F0E /* Delm-Medium.otf */; };
+		043C9F8C25F2DD2800D13F0E /* Delm-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 043C9F8825F2DD2800D13F0E /* Delm-Medium.otf */; };
+		043C9F8D25F2DD2800D13F0E /* ThirstySoftRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 043C9F8925F2DD2800D13F0E /* ThirstySoftRegular.otf */; };
+		043C9F8E25F2DD2800D13F0E /* ThirstySoftRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 043C9F8925F2DD2800D13F0E /* ThirstySoftRegular.otf */; };
+		043C9F8F25F2DD2800D13F0E /* ThirstySoftRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 043C9F8925F2DD2800D13F0E /* ThirstySoftRegular.otf */; };
+		044D5AB225F4030300BC77C1 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D5AB125F4030300BC77C1 /* Application.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +56,9 @@
 		043C9F7325F2A2CB00D13F0E /* P04UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = P04UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		043C9F7725F2A2CB00D13F0E /* P04UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = P04UITests.swift; sourceTree = "<group>"; };
 		043C9F7925F2A2CB00D13F0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		043C9F8825F2DD2800D13F0E /* Delm-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Delm-Medium.otf"; sourceTree = "<group>"; };
+		043C9F8925F2DD2800D13F0E /* ThirstySoftRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ThirstySoftRegular.otf; sourceTree = "<group>"; };
+		044D5AB125F4030300BC77C1 /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,12 +109,10 @@
 		043C9F5425F2A2C800D13F0E /* P04 */ = {
 			isa = PBXGroup;
 			children = (
-				043C9F5525F2A2C800D13F0E /* AppDelegate.swift */,
-				043C9F5725F2A2C800D13F0E /* SceneDelegate.swift */,
-				043C9F5925F2A2C800D13F0E /* ViewController.swift */,
-				043C9F5B25F2A2C800D13F0E /* Main.storyboard */,
-				043C9F5E25F2A2CA00D13F0E /* Assets.xcassets */,
-				043C9F6025F2A2CA00D13F0E /* LaunchScreen.storyboard */,
+				044D5AB025F402E800BC77C1 /* Model */,
+				044D5AA125F3E62C00BC77C1 /* Controler */,
+				044D5AA225F3E71E00BC77C1 /* View */,
+				044D5AA325F3E74400BC77C1 /* Other Files */,
 				043C9F6325F2A2CA00D13F0E /* Info.plist */,
 			);
 			path = P04;
@@ -126,6 +134,43 @@
 				043C9F7925F2A2CB00D13F0E /* Info.plist */,
 			);
 			path = P04UITests;
+			sourceTree = "<group>";
+		};
+		044D5AA125F3E62C00BC77C1 /* Controler */ = {
+			isa = PBXGroup;
+			children = (
+				043C9F5925F2A2C800D13F0E /* ViewController.swift */,
+			);
+			path = Controler;
+			sourceTree = "<group>";
+		};
+		044D5AA225F3E71E00BC77C1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				043C9F5B25F2A2C800D13F0E /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		044D5AA325F3E74400BC77C1 /* Other Files */ = {
+			isa = PBXGroup;
+			children = (
+				043C9F5525F2A2C800D13F0E /* AppDelegate.swift */,
+				043C9F5725F2A2C800D13F0E /* SceneDelegate.swift */,
+				043C9F5E25F2A2CA00D13F0E /* Assets.xcassets */,
+				043C9F6025F2A2CA00D13F0E /* LaunchScreen.storyboard */,
+				043C9F8825F2DD2800D13F0E /* Delm-Medium.otf */,
+				043C9F8925F2DD2800D13F0E /* ThirstySoftRegular.otf */,
+			);
+			path = "Other Files";
+			sourceTree = "<group>";
+		};
+		044D5AB025F402E800BC77C1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				044D5AB125F4030300BC77C1 /* Application.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +278,8 @@
 			files = (
 				043C9F6225F2A2CA00D13F0E /* LaunchScreen.storyboard in Resources */,
 				043C9F5F25F2A2CA00D13F0E /* Assets.xcassets in Resources */,
+				043C9F8D25F2DD2800D13F0E /* ThirstySoftRegular.otf in Resources */,
+				043C9F8A25F2DD2800D13F0E /* Delm-Medium.otf in Resources */,
 				043C9F5D25F2A2C800D13F0E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -241,6 +288,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				043C9F8E25F2DD2800D13F0E /* ThirstySoftRegular.otf in Resources */,
+				043C9F8B25F2DD2800D13F0E /* Delm-Medium.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,6 +297,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				043C9F8F25F2DD2800D13F0E /* ThirstySoftRegular.otf in Resources */,
+				043C9F8C25F2DD2800D13F0E /* Delm-Medium.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				043C9F5A25F2A2C800D13F0E /* ViewController.swift in Sources */,
+				044D5AB225F4030300BC77C1 /* Application.swift in Sources */,
 				043C9F5625F2A2C800D13F0E /* AppDelegate.swift in Sources */,
 				043C9F5825F2A2C800D13F0E /* SceneDelegate.swift in Sources */,
 			);
@@ -439,6 +491,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8453MU78WA;
 				INFOPLIST_FILE = P04/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -446,7 +499,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = gdtr.P04;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -458,6 +511,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8453MU78WA;
 				INFOPLIST_FILE = P04/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -465,7 +519,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = gdtr.P04;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
