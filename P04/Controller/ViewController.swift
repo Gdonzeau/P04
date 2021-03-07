@@ -25,6 +25,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     @IBOutlet weak var doubleSquareUp: UIStackView!
     @IBOutlet weak var doubleSquareDown: UIStackView!
     
+    
+    
     @IBOutlet weak var imageRectangleUp: UIImageView!
     @IBOutlet weak var imageRectangleDown: UIImageView!
     @IBOutlet weak var imageSquareUpLeft: UIImageView!
@@ -227,17 +229,12 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     }
     
     @IBAction func SwipeUp(_ sender: UISwipeGestureRecognizer) {
-        print("UP")
-        /*
-        let items = [profileImageView.image]
+        print("Up")
+        
+        let items = [imageRectangleUp.image]
         let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
         present(ac, animated: true)
-        */
     }
     
-    
-    @IBAction func SwipeRight(_ sender: UISwipeGestureRecognizer) {
-        print("Right")
-    }
 }
 
