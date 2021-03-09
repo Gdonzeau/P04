@@ -27,6 +27,22 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     @IBOutlet weak var SquareDownLeft: UIButton!
     @IBOutlet weak var SquareDownRight: UIButton!
     
+    @IBOutlet weak var SwipeToShare: UILabel!
+    @IBOutlet weak var Arrow: UIImageView!
+    
+    //var ImageLeft = ("Arrow Left")
+    
+    override func didRotate(from fromInterfaceOrientation : UIInterfaceOrientation) {
+        if fromInterfaceOrientation == .portrait || fromInterfaceOrientation == .portraitUpsideDown{
+            SwipeToShare.text = "Swipe left to share"
+            Arrow.image = UIImage(contentsOfFile: "Arrow Left")
+        }
+        
+        else {
+            SwipeToShare.text = "Swipe up to share"
+            Arrow.image = UIImage(contentsOfFile: "Arrow Up")
+        }
+    }
     
     @IBAction func ButtonSquareUpLeft() {
         rank = 1

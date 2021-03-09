@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0415BFC525F5853E0091416C /* ActivityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415BFC425F5853E0091416C /* ActivityController.swift */; };
+		0415C05D25F7EEE20091416C /* Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415C05C25F7EEE20091416C /* Orientation.swift */; };
 		043C9F5625F2A2C800D13F0E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043C9F5525F2A2C800D13F0E /* AppDelegate.swift */; };
 		043C9F5825F2A2C800D13F0E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043C9F5725F2A2C800D13F0E /* SceneDelegate.swift */; };
 		043C9F5A25F2A2C800D13F0E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043C9F5925F2A2C800D13F0E /* ViewController.swift */; };
@@ -44,6 +45,7 @@
 
 /* Begin PBXFileReference section */
 		0415BFC425F5853E0091416C /* ActivityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityController.swift; sourceTree = "<group>"; };
+		0415C05C25F7EEE20091416C /* Orientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orientation.swift; sourceTree = "<group>"; };
 		043C9F5225F2A2C800D13F0E /* P04.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = P04.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		043C9F5525F2A2C800D13F0E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		043C9F5725F2A2C800D13F0E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 			children = (
 				043C9F5925F2A2C800D13F0E /* ViewController.swift */,
 				0415BFC425F5853E0091416C /* ActivityController.swift */,
+				0415C05C25F7EEE20091416C /* Orientation.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 				044D5AB225F4030300BC77C1 /* Application.swift in Sources */,
 				043C9F5625F2A2C800D13F0E /* AppDelegate.swift in Sources */,
 				0415BFC525F5853E0091416C /* ActivityController.swift in Sources */,
+				0415C05D25F7EEE20091416C /* Orientation.swift in Sources */,
 				043C9F5825F2A2C800D13F0E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -495,7 +499,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8453MU78WA;
 				INFOPLIST_FILE = P04/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -515,7 +519,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8453MU78WA;
 				INFOPLIST_FILE = P04/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
