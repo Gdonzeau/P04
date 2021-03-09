@@ -28,19 +28,21 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     @IBOutlet weak var SquareDownRight: UIButton!
     
     @IBOutlet weak var SwipeToShare: UILabel!
-    @IBOutlet weak var Arrow: UIImageView!
+    @IBOutlet weak var Arrow: UIButton!
+    
+    
     
     //var ImageLeft = ("Arrow Left")
     
     override func didRotate(from fromInterfaceOrientation : UIInterfaceOrientation) {
         if fromInterfaceOrientation == .portrait || fromInterfaceOrientation == .portraitUpsideDown{
             SwipeToShare.text = "Swipe left to share"
-            Arrow.image = UIImage(contentsOfFile: "Arrow Left")
+            Arrow.setImage(UIImage(imageLiteralResourceName: "Arrow Left"), for: .normal)
         }
         
         else {
             SwipeToShare.text = "Swipe up to share"
-            Arrow.image = UIImage(contentsOfFile: "Arrow Up")
+            Arrow.setImage(UIImage(imageLiteralResourceName: "Arrow Up"), for: .normal)
         }
     }
     
@@ -146,12 +148,22 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     }
     
     @IBAction func SwipeUp(_ sender: UISwipeGestureRecognizer) {
+        if SwipeToShare.text == "Swipe up to share" {
         print("Up")
+        }
         /*
          let items = [imageRectangleUp.image]
          let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
          present(ac, animated: true)
          */
+    }
+    
+    @IBAction func SwipeLeft(_ sender: UISwipeGestureRecognizer) {
+        if SwipeToShare.text == "Swipe left to share" {
+        print("Left")
+        }
+        
+        
     }
     
 }
