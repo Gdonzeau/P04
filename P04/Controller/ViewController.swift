@@ -10,7 +10,7 @@ import UIKit
 class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     var app = Application()
-    var rank = 1
+    var rank = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -18,110 +18,41 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         print("Début")
     }
     
-    
-    
-    @IBOutlet weak var rectangleDown: UIStackView!
-    @IBOutlet weak var rectangleUp: UIStackView!
-    @IBOutlet weak var doubleSquareUp: UIStackView!
-    @IBOutlet weak var doubleSquareDown: UIStackView!
-    
-    
-    
-    @IBOutlet weak var imageRectangleUp: UIImageView!
-    @IBOutlet weak var imageRectangleDown: UIImageView!
-    @IBOutlet weak var imageSquareUpLeft: UIImageView!
-    @IBOutlet weak var imageSquareUpRight: UIImageView!
-    @IBOutlet weak var imageSquareDownLeft: UIImageView!
-    @IBOutlet weak var imageSquareDownRight: UIImageView!
-    
-    @IBOutlet weak var selected01: UIImageView!
-    @IBOutlet weak var selected02: UIImageView!
-    @IBOutlet weak var selected03: UIImageView!
-    
     @IBOutlet weak var button01: UIButton!
     @IBOutlet weak var button02: UIButton!
     @IBOutlet weak var button03: UIButton!
     
-    @IBAction func importImageSquareUpRight(_ sender: UIButton) {
+    @IBOutlet weak var SquareUpLeft: UIButton!
+    @IBOutlet weak var SquareUpRight: UIButton!
+    @IBOutlet weak var SquareDownLeft: UIButton!
+    @IBOutlet weak var SquareDownRight: UIButton!
+    
+    
+    @IBAction func ButtonSquareUpLeft() {
         rank = 1
-        print("1")
-        let image = UIImagePickerController()
-        image.delegate = self
-        
-        image.sourceType = UIImagePickerController.SourceType.photoLibrary
-        
-        image.allowsEditing = false
-        
-        self.present(image, animated: true)
-        {
-            // After
-        }
+        findImage()
+        SquareUpLeft.imageView?.contentMode = .scaleAspectFill
     }
-    @IBAction func importImageSquareUpLeft(_ sender: UIButton) {
+    
+    @IBAction func ButtonSquareUpRight() {
         rank = 2
-        print("2")
-        let image = UIImagePickerController()
-        image.delegate = self
-        
-        image.sourceType = UIImagePickerController.SourceType.photoLibrary
-        
-        image.allowsEditing = false
-        
-        self.present(image, animated: true)
-        {
-            // After
-        }
+        findImage()
+        SquareUpRight.imageView?.contentMode = .scaleAspectFill
     }
     
-    @IBAction func importImageRectangleUp(_ sender: UIButton) {
+    @IBAction func ButtonSquareDownLeft() {
         rank = 3
-        print(rank)
-        let image = UIImagePickerController()
-        image.delegate = self
-        
-        image.sourceType = UIImagePickerController.SourceType.photoLibrary
-        
-        image.allowsEditing = false
-        
-        self.present(image, animated: true)
-        {
-            // After
-        }
-    }
-    @IBAction func importImageSquareDownRight(_ sender: UIButton) {
-        rank = 4
-        print(rank)
-        let image = UIImagePickerController()
-        image.delegate = self
-        
-        image.sourceType = UIImagePickerController.SourceType.photoLibrary
-        
-        image.allowsEditing = false
-        
-        self.present(image, animated: true)
-        {
-            // After
-        }
+        findImage()
+        SquareDownLeft.imageView?.contentMode = .scaleAspectFill
     }
     
-    @IBAction func importImageSquareDownLeft(_ sender: UIButton) {
-        rank = 5
-        print(rank)
-        let image = UIImagePickerController()
-        image.delegate = self
-        
-        image.sourceType = UIImagePickerController.SourceType.photoLibrary
-        
-        image.allowsEditing = false
-        
-        self.present(image, animated: true)
-        {
-            // After
-        }
+    @IBAction func ButtonSquareDownRight() {
+        rank = 4
+        findImage()
+        SquareDownRight.imageView?.contentMode = .scaleAspectFill
     }
-    @IBAction func importImageRectangleDown(_ sender: UIButton) {
-        rank = 6
-        print(rank)
+    
+    func findImage() {
         let image = UIImagePickerController()
         image.delegate = self
         
@@ -136,28 +67,19 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             switch rank {
             case 1:
-                imageSquareUpRight.image = image
-                print("1")
+                SquareUpLeft.setImage(image, for: .normal)
             case 2:
-                imageSquareUpLeft.image = image
-                print("2")
+                SquareUpRight.setImage(image, for: .normal)
             case 3:
-                imageRectangleUp.image = image
-                print("3")
+                SquareDownLeft.setImage(image, for: .normal)
             case 4:
-                imageSquareDownRight.image = image
-                print("4")
-            case 5:
-                imageSquareDownLeft.image = image
-                print("5")
-            case 6:
-                imageRectangleDown.image = image
-                print("6")
+                SquareDownRight.setImage(image, for: .normal)
             default:
-                print("Rien")
+                print("???")
             }
             
         }
@@ -165,75 +87,55 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
             // Message d'erreur
         }
         self.dismiss(animated: true, completion: nil)
-        }
+    }
     
     @IBAction func Bouton1() {
-        doubleSquareUp.isHidden = true
-        rectangleUp.isHidden = false
-        doubleSquareDown.isHidden = false
-        rectangleDown.isHidden = true
-        
-        button01.alpha = 1.0
-        button02.alpha = 0.1
-        button03.alpha = 0.1
- 
-        /*
-        button01.isHidden = false
-        button02.isHidden = true
-        button03.isHidden = true
- */
+        button01.setImage(UIImage(imageLiteralResourceName: "Selected"), for: .normal)
+        button02.setImage(UIImage(imageLiteralResourceName: "Layout 2"), for: .normal)
+        button03.setImage(UIImage(imageLiteralResourceName: "Layout 3"), for: .normal)
+        SquareUpLeft.isHidden = true
+        SquareUpRight.isHidden = false
+        SquareDownLeft.isHidden = false
+        SquareDownRight.isHidden = false
     }
     
     @IBAction func Bouton2() {
-        doubleSquareUp.isHidden = false
-        rectangleUp.isHidden = true
-        doubleSquareDown.isHidden = true
-        rectangleDown.isHidden = false
-        
-        button01.alpha = 0.1
-        button02.alpha = 1.0
-        button03.alpha = 0.1
- 
-        /*
-        button01.isHidden = true
-        button02.isHidden = false
-        button03.isHidden = true
- */
+        button01.setImage(UIImage(imageLiteralResourceName: "Layout 1"), for: .normal)
+        button02.setImage(UIImage(imageLiteralResourceName: "Selected"), for: .normal)
+        button03.setImage(UIImage(imageLiteralResourceName: "Layout 3"), for: .normal)
+        SquareUpLeft.isHidden = false
+        SquareUpRight.isHidden = false
+        SquareDownLeft.isHidden = true
+        SquareDownRight.isHidden = false
     }
     
     @IBAction func Bouton3() {
-        doubleSquareUp.isHidden = false
-        rectangleUp.isHidden = true
-        doubleSquareDown.isHidden = false
-        rectangleDown.isHidden = true
-        
-        button01.alpha = 0.1
-        button02.alpha = 0.1
-        button03.alpha = 1.0
- 
-        /*
-        button01.isHidden = true
-        button02.isHidden = true
-        button03.isHidden = false
- */
+        button01.setImage(UIImage(imageLiteralResourceName: "Layout 1"), for: .normal)
+        button02.setImage(UIImage(imageLiteralResourceName: "Layout 2"), for: .normal)
+        button03.setImage(UIImage(imageLiteralResourceName: "Selected"), for: .normal)
+        SquareUpLeft.isHidden = false
+        SquareUpRight.isHidden = false
+        SquareDownLeft.isHidden = false
+        SquareDownRight.isHidden = false
     }
     
     private func start() {
-        doubleSquareUp.isHidden = true
-        rectangleUp.isHidden = false
-        doubleSquareDown.isHidden = false
-        rectangleDown.isHidden = true
-        button01.alpha = 1.0
-        button02.alpha = 0.1
-        button03.alpha = 0.1
+        button01.setImage(UIImage(imageLiteralResourceName: "Selected"), for: .normal)
+        button02.setImage(UIImage(imageLiteralResourceName: "Layout 2"), for: .normal)
+        button03.setImage(UIImage(imageLiteralResourceName: "Layout 3"), for: .normal)
+        SquareUpLeft.isHidden = true
+        SquareUpRight.isHidden = false
+        SquareDownLeft.isHidden = false
+        SquareDownRight.isHidden = false
     }
     
     @IBAction func SwipeUp(_ sender: UISwipeGestureRecognizer) {
         print("Up")
-        
-        let items = [imageRectangleUp.image]
-        let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
-        present(ac, animated: true)
+        /*
+         let items = [imageRectangleUp.image]
+         let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
+         present(ac, animated: true)
+         */
     }
     
 }

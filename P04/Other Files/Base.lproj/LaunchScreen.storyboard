@@ -16,18 +16,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Instagrid" translatesAutoresizingMaskIntoConstraints="NO" id="ZQc-ey-Pm1">
-                                <rect key="frame" x="149" y="433" width="116" height="30"/>
+                                <rect key="frame" x="40" y="395.5" width="334" height="105"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="116" id="7Ou-gc-k64"/>
-                                    <constraint firstAttribute="width" secondItem="ZQc-ey-Pm1" secondAttribute="height" multiplier="58:15" id="i3k-M4-ByR"/>
+                                    <constraint firstAttribute="width" secondItem="ZQc-ey-Pm1" secondAttribute="height" multiplier="124:39" id="iWR-k2-vpx"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.71360510590000004" green="0.84258151049999996" blue="0.90132403370000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZQc-ey-Pm1" secondAttribute="trailing" constant="40" id="1ge-eV-F8d"/>
                             <constraint firstItem="ZQc-ey-Pm1" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="G31-Xm-LGb"/>
                             <constraint firstItem="ZQc-ey-Pm1" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="X8D-iT-YeJ"/>
+                            <constraint firstItem="ZQc-ey-Pm1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="tbl-5c-K6B"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -37,6 +38,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Instagrid" width="116" height="30"/>
+        <image name="Instagrid" width="42" height="13"/>
     </resources>
 </document>
