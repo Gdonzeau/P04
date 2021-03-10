@@ -30,6 +30,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     @IBOutlet weak var SwipeToShare: UILabel!
     @IBOutlet weak var Arrow: UIButton!
     
+    @IBOutlet weak var FinalImage: UIView!
     
     
     //var ImageLeft = ("Arrow Left")
@@ -151,11 +152,15 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         if SwipeToShare.text == "Swipe up to share" {
         print("Up")
         }
-        /*
-         let items = [imageRectangleUp.image]
-         let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
-         present(ac, animated: true)
-         */
+        let renderer = UIGraphicsImageRenderer(size: FinalImage.bounds.size)
+        let image = renderer.image { ctx in
+            FinalImage.drawHierarchy(in: FinalImage.bounds, afterScreenUpdates: true)
+        }
+        
+        let items = [image]
+        let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
+        present(ac, animated: true)
+        
     }
     
     @IBAction func SwipeLeft(_ sender: UISwipeGestureRecognizer) {

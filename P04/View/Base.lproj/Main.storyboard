@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina3_5" orientation="landscape" appearance="light"/>
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -21,11 +21,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="P04" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instagrid" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iSU-a6-u1q">
-                                <rect key="frame" x="140" y="0.0" width="200" height="66.5"/>
+                                <rect key="frame" x="107" y="10" width="200" height="66.666666666666671"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="OCw-zH-9uc"/>
                                     <constraint firstAttribute="width" secondItem="iSU-a6-u1q" secondAttribute="height" multiplier="3:1" id="jfg-Pc-BYA"/>
@@ -35,24 +35,24 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Bj1-oJ-Ay5" userLabel="buttons">
-                                <rect key="frame" x="380" y="10" width="80" height="300"/>
+                                <rect key="frame" x="20" y="616.33333333333337" width="374" height="99.666666666666629"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pib-2h-Ax0" userLabel="Button01">
-                                        <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="104.66666666666667" height="99.666666666666671"/>
                                         <state key="normal" image="Selected"/>
                                         <connections>
                                             <action selector="Bouton1" destination="BYZ-38-t0r" eventType="touchUpInside" id="mAX-fh-Jzr"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="one-Og-GKl" userLabel="Button02">
-                                        <rect key="frame" x="0.0" y="110" width="80" height="80"/>
+                                        <rect key="frame" x="134.66666666666666" y="0.0" width="104.66666666666666" height="99.666666666666671"/>
                                         <state key="normal" image="Selected"/>
                                         <connections>
                                             <action selector="Bouton2" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bd5-aT-PJz"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b9O-6T-sv6" userLabel="Button03">
-                                        <rect key="frame" x="0.0" y="220" width="80" height="80"/>
+                                        <rect key="frame" x="269.33333333333331" y="0.0" width="104.66666666666669" height="99.666666666666671"/>
                                         <state key="normal" image="Selected"/>
                                         <connections>
                                             <action selector="Bouton3" destination="BYZ-38-t0r" eventType="touchUpInside" id="86h-KY-58M"/>
@@ -84,13 +84,13 @@
                                 </variation>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X9B-aD-RUb" userLabel="BlueSquare">
-                                <rect key="frame" x="133.5" y="86.5" width="213" height="213.5"/>
+                                <rect key="frame" x="40" y="201" width="334" height="334"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="V0T-Z5-Hcb" userLabel="Squares Up">
-                                        <rect key="frame" x="20" y="20" width="173" height="77"/>
+                                        <rect key="frame" x="20" y="20" width="294" height="137"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="erT-Gj-Taw" userLabel="Square Up Left">
-                                                <rect key="frame" x="0.0" y="0.0" width="76.5" height="77"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="137" height="137"/>
                                                 <color key="backgroundColor" red="0.99204939599999997" green="0.99221879239999999" blue="0.9920386672" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" image="Plus"/>
                                                 <connections>
@@ -98,7 +98,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uwz-Gs-oTm" userLabel="Square Up Right">
-                                                <rect key="frame" x="96.5" y="0.0" width="76.5" height="77"/>
+                                                <rect key="frame" x="157" y="0.0" width="137" height="137"/>
                                                 <color key="backgroundColor" red="0.99204939599999997" green="0.99221879239999999" blue="0.9920386672" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" image="Plus"/>
                                                 <connections>
@@ -108,10 +108,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="DZN-AU-FcB" userLabel="Squares Down">
-                                        <rect key="frame" x="20" y="117" width="173" height="76.5"/>
+                                        <rect key="frame" x="20" y="177" width="294" height="137"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nAw-wX-JaS" userLabel="Square Down Left">
-                                                <rect key="frame" x="0.0" y="0.0" width="76.5" height="76.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="137" height="137"/>
                                                 <color key="backgroundColor" red="0.99204939599999997" green="0.99221879239999999" blue="0.9920386672" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" image="Plus"/>
                                                 <connections>
@@ -119,7 +119,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="44Y-az-hfK" userLabel="Square Down Right">
-                                                <rect key="frame" x="96.5" y="0.0" width="76.5" height="76.5"/>
+                                                <rect key="frame" x="157" y="0.0" width="137" height="137"/>
                                                 <color key="backgroundColor" red="0.99204939599999997" green="0.99221879239999999" blue="0.9920386672" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" image="Plus"/>
                                                 <connections>
@@ -144,14 +144,14 @@
                                     <constraint firstItem="DZN-AU-FcB" firstAttribute="leading" secondItem="X9B-aD-RUb" secondAttribute="leading" constant="20" id="z3h-9R-wnj"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Swipe up to share" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TmT-nG-9Wh" userLabel="Swipe to share">
-                                <rect key="frame" x="-15.5" y="84.5" width="142" height="25.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe up to share" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TmT-nG-9Wh" userLabel="Swipe to share">
+                                <rect key="frame" x="136.33333333333337" y="165.33333333333334" width="141.66666666666663" height="25.666666666666657"/>
                                 <fontDescription key="fontDescription" name="Delm-Medium" family="Delm" pointSize="23"/>
                                 <color key="textColor" red="0.99204939599999997" green="0.99221879239999999" blue="0.9920386672" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="meK-nN-AaB" userLabel="Arrow">
-                                <rect key="frame" x="48" y="64.5" width="15" height="15"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="meK-nN-AaB" userLabel="Arrow">
+                                <rect key="frame" x="199.66666666666666" y="145.33333333333334" width="15" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="meK-nN-AaB" secondAttribute="height" multiplier="1:1" id="iJF-4N-sO9"/>
                                     <constraint firstAttribute="width" constant="15" id="xLU-2O-0DV"/>
@@ -194,12 +194,12 @@
                                 <exclude reference="Zh5-az-Hc2"/>
                                 <exclude reference="h5W-re-QlS"/>
                                 <exclude reference="xnG-vu-XQf"/>
-                                <exclude reference="oMz-Ry-vyg"/>
                                 <exclude reference="RrO-Mk-4x8"/>
+                                <exclude reference="oMz-Ry-vyg"/>
+                                <exclude reference="nnm-BV-9sr"/>
                                 <exclude reference="53t-a2-YYq"/>
                                 <exclude reference="fPs-vw-iCs"/>
                                 <exclude reference="icj-v4-PAu"/>
-                                <exclude reference="nnm-BV-9sr"/>
                                 <exclude reference="WQ3-Zc-Axp"/>
                             </mask>
                         </variation>
@@ -219,17 +219,17 @@
                                 <exclude reference="IZT-ED-7cX"/>
                                 <include reference="h5W-re-QlS"/>
                                 <exclude reference="tYG-ML-3Tt"/>
-                                <exclude reference="UMF-rE-L18"/>
-                                <exclude reference="oMz-Ry-vyg"/>
                                 <include reference="RrO-Mk-4x8"/>
                                 <exclude reference="YMv-xU-xpb"/>
+                                <exclude reference="UMF-rE-L18"/>
+                                <exclude reference="oMz-Ry-vyg"/>
+                                <exclude reference="QNP-4B-BDi"/>
+                                <include reference="nnm-BV-9sr"/>
                                 <include reference="fPs-vw-iCs"/>
                                 <include reference="icj-v4-PAu"/>
                                 <exclude reference="jdP-Z2-qJa"/>
                                 <exclude reference="lYf-CT-6tq"/>
                                 <exclude reference="nGx-H4-e9q"/>
-                                <exclude reference="QNP-4B-BDi"/>
-                                <include reference="nnm-BV-9sr"/>
                                 <exclude reference="4kd-7Z-7nR"/>
                                 <include reference="WQ3-Zc-Axp"/>
                             </mask>
@@ -244,6 +244,7 @@
                         <outlet property="Button01" destination="pib-2h-Ax0" id="NzS-Em-VaS"/>
                         <outlet property="Button02" destination="one-Og-GKl" id="S3t-Vd-z5r"/>
                         <outlet property="Button03" destination="b9O-6T-sv6" id="4fG-Rp-RZq"/>
+                        <outlet property="FinalImage" destination="X9B-aD-RUb" id="VMI-rG-Njo"/>
                         <outlet property="SquareDownLeft" destination="nAw-wX-JaS" id="DyE-HP-quN"/>
                         <outlet property="SquareDownRight" destination="44Y-az-hfK" id="olk-wf-QPs"/>
                         <outlet property="SquareUpLeft" destination="erT-Gj-Taw" id="MpP-7b-d4F"/>
@@ -260,7 +261,7 @@
                         <action selector="SwipeUp:" destination="BYZ-38-t0r" id="Wx7-XI-sP7"/>
                     </connections>
                 </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="right" id="fHB-Oo-zMW" userLabel="Swipe Gesture RecognizerLeft">
+                <swipeGestureRecognizer direction="left" id="fHB-Oo-zMW" userLabel="Swipe Gesture RecognizerLeft">
                     <connections>
                         <action selector="SwipeLeft:" destination="BYZ-38-t0r" id="uom-1k-0A7"/>
                     </connections>
@@ -270,7 +271,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Arrow Up" width="13.5" height="9.5"/>
+        <image name="Arrow Up" width="13.333333015441895" height="9.6666669845581055"/>
         <image name="Plus" width="40" height="40"/>
         <image name="Selected" width="80" height="80"/>
     </resources>
