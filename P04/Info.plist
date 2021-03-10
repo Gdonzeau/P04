@@ -21,7 +21,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>Demande d'accès aux photos. Tout va bien.</string>
+	<string>Demande d&apos;accès aux photos. Tout va bien.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Delm-Medium.otf</string>
@@ -62,6 +62,8 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>Instagrid demande l&apos;accès à la caméra</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

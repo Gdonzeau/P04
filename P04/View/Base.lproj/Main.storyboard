@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -21,11 +21,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="P04" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instagrid" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iSU-a6-u1q">
-                                <rect key="frame" x="107" y="10" width="200" height="66.666666666666671"/>
+                                <rect key="frame" x="107" y="54" width="200" height="66.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="OCw-zH-9uc"/>
                                     <constraint firstAttribute="width" secondItem="iSU-a6-u1q" secondAttribute="height" multiplier="3:1" id="jfg-Pc-BYA"/>
@@ -35,24 +35,24 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Bj1-oJ-Ay5" userLabel="buttons">
-                                <rect key="frame" x="20" y="616.33333333333337" width="374" height="99.666666666666629"/>
+                                <rect key="frame" x="20" y="742.5" width="374" height="99.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pib-2h-Ax0" userLabel="Button01">
-                                        <rect key="frame" x="0.0" y="0.0" width="104.66666666666667" height="99.666666666666671"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="104.5" height="99.5"/>
                                         <state key="normal" image="Selected"/>
                                         <connections>
                                             <action selector="Bouton1" destination="BYZ-38-t0r" eventType="touchUpInside" id="mAX-fh-Jzr"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="one-Og-GKl" userLabel="Button02">
-                                        <rect key="frame" x="134.66666666666666" y="0.0" width="104.66666666666666" height="99.666666666666671"/>
+                                        <rect key="frame" x="134.5" y="0.0" width="105" height="99.5"/>
                                         <state key="normal" image="Selected"/>
                                         <connections>
                                             <action selector="Bouton2" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bd5-aT-PJz"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b9O-6T-sv6" userLabel="Button03">
-                                        <rect key="frame" x="269.33333333333331" y="0.0" width="104.66666666666669" height="99.666666666666671"/>
+                                        <rect key="frame" x="269.5" y="0.0" width="104.5" height="99.5"/>
                                         <state key="normal" image="Selected"/>
                                         <connections>
                                             <action selector="Bouton3" destination="BYZ-38-t0r" eventType="touchUpInside" id="86h-KY-58M"/>
@@ -84,25 +84,29 @@
                                 </variation>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X9B-aD-RUb" userLabel="BlueSquare">
-                                <rect key="frame" x="40" y="201" width="334" height="334"/>
+                                <rect key="frame" x="40" y="281" width="334" height="334"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="V0T-Z5-Hcb" userLabel="Squares Up">
                                         <rect key="frame" x="20" y="20" width="294" height="137"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="erT-Gj-Taw" userLabel="Square Up Left">
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="erT-Gj-Taw" userLabel="Square Up Left">
                                                 <rect key="frame" x="0.0" y="0.0" width="137" height="137"/>
                                                 <color key="backgroundColor" red="0.99204939599999997" green="0.99221879239999999" blue="0.9920386672" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <gestureRecognizers/>
                                                 <state key="normal" image="Plus"/>
                                                 <connections>
-                                                    <action selector="ButtonSquareUpLeft" destination="BYZ-38-t0r" eventType="touchUpInside" id="1co-PL-Qnp"/>
+                                                    <action selector="ButtonSquareUpLeft" destination="BYZ-38-t0r" eventType="touchUpInside" id="GiX-XM-eOS"/>
+                                                    <outletCollection property="gestureRecognizers" destination="Sz7-BS-EhO" appends="YES" id="JsE-1e-2Wm"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uwz-Gs-oTm" userLabel="Square Up Right">
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uwz-Gs-oTm" userLabel="Square Up Right">
                                                 <rect key="frame" x="157" y="0.0" width="137" height="137"/>
                                                 <color key="backgroundColor" red="0.99204939599999997" green="0.99221879239999999" blue="0.9920386672" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <gestureRecognizers/>
                                                 <state key="normal" image="Plus"/>
                                                 <connections>
                                                     <action selector="ButtonSquareUpRight" destination="BYZ-38-t0r" eventType="touchUpInside" id="45f-RY-iAV"/>
+                                                    <outletCollection property="gestureRecognizers" destination="cMY-wC-wvn" appends="YES" id="0lI-Um-DDE"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -110,20 +114,24 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="DZN-AU-FcB" userLabel="Squares Down">
                                         <rect key="frame" x="20" y="177" width="294" height="137"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nAw-wX-JaS" userLabel="Square Down Left">
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nAw-wX-JaS" userLabel="Square Down Left">
                                                 <rect key="frame" x="0.0" y="0.0" width="137" height="137"/>
                                                 <color key="backgroundColor" red="0.99204939599999997" green="0.99221879239999999" blue="0.9920386672" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <gestureRecognizers/>
                                                 <state key="normal" image="Plus"/>
                                                 <connections>
                                                     <action selector="ButtonSquareDownLeft" destination="BYZ-38-t0r" eventType="touchUpInside" id="9UT-gE-x4D"/>
+                                                    <outletCollection property="gestureRecognizers" destination="l4l-Yi-rKx" appends="YES" id="ebW-bG-jNM"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="44Y-az-hfK" userLabel="Square Down Right">
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="44Y-az-hfK" userLabel="Square Down Right">
                                                 <rect key="frame" x="157" y="0.0" width="137" height="137"/>
                                                 <color key="backgroundColor" red="0.99204939599999997" green="0.99221879239999999" blue="0.9920386672" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <gestureRecognizers/>
                                                 <state key="normal" image="Plus"/>
                                                 <connections>
                                                     <action selector="ButtonSquareDownRight" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ppz-0M-qNK"/>
+                                                    <outletCollection property="gestureRecognizers" destination="NRp-A1-0wq" appends="YES" id="Q1T-o1-FPQ"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -145,13 +153,13 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe up to share" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TmT-nG-9Wh" userLabel="Swipe to share">
-                                <rect key="frame" x="136.33333333333337" y="165.33333333333334" width="141.66666666666663" height="25.666666666666657"/>
+                                <rect key="frame" x="20" y="244" width="374" height="27"/>
                                 <fontDescription key="fontDescription" name="Delm-Medium" family="Delm" pointSize="23"/>
                                 <color key="textColor" red="0.99204939599999997" green="0.99221879239999999" blue="0.9920386672" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="meK-nN-AaB" userLabel="Arrow">
-                                <rect key="frame" x="199.66666666666666" y="145.33333333333334" width="15" height="15"/>
+                                <rect key="frame" x="199.5" y="224" width="15" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="meK-nN-AaB" secondAttribute="height" multiplier="1:1" id="iJF-4N-sO9"/>
                                     <constraint firstAttribute="width" constant="15" id="xLU-2O-0DV"/>
@@ -165,7 +173,10 @@
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Bj1-oJ-Ay5" secondAttribute="trailing" constant="20" id="3wf-LA-SsN"/>
                             <constraint firstItem="Bj1-oJ-Ay5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="4kd-7Z-7nR"/>
-                            <constraint firstItem="X9B-aD-RUb" firstAttribute="top" secondItem="iSU-a6-u1q" secondAttribute="bottom" constant="20" id="53t-a2-YYq"/>
+                            <constraint firstItem="X9B-aD-RUb" firstAttribute="top" secondItem="iSU-a6-u1q" secondAttribute="bottom" id="53t-a2-YYq"/>
+                            <constraint firstItem="X9B-aD-RUb" firstAttribute="centerY" secondItem="TmT-nG-9Wh" secondAttribute="centerY" id="5BW-96-XeJ"/>
+                            <constraint firstItem="X9B-aD-RUb" firstAttribute="centerY" secondItem="TmT-nG-9Wh" secondAttribute="centerY" id="73s-Ds-rj1"/>
+                            <constraint firstItem="X9B-aD-RUb" firstAttribute="leading" secondItem="TmT-nG-9Wh" secondAttribute="trailing" constant="10" id="GHH-AY-0nn"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="X9B-aD-RUb" secondAttribute="trailing" constant="40" id="IZT-ED-7cX"/>
                             <constraint firstItem="iSU-a6-u1q" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KUg-Bt-JpG"/>
                             <constraint firstItem="iSU-a6-u1q" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="QNP-4B-BDi">
@@ -180,9 +191,11 @@
                             <constraint firstItem="X9B-aD-RUb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eEB-Ly-qWU"/>
                             <constraint firstItem="X9B-aD-RUb" firstAttribute="leading" secondItem="TmT-nG-9Wh" secondAttribute="trailing" constant="7" id="fPs-vw-iCs"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="X9B-aD-RUb" secondAttribute="bottom" constant="20" id="h5W-re-QlS"/>
-                            <constraint firstItem="X9B-aD-RUb" firstAttribute="top" secondItem="iSU-a6-u1q" secondAttribute="bottom" constant="20" id="icj-v4-PAu"/>
+                            <constraint firstItem="TmT-nG-9Wh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="iFw-E6-DnO"/>
                             <constraint firstItem="X9B-aD-RUb" firstAttribute="top" secondItem="TmT-nG-9Wh" secondAttribute="bottom" constant="10" id="jdP-Z2-qJa"/>
+                            <constraint firstItem="Bj1-oJ-Ay5" firstAttribute="leading" secondItem="X9B-aD-RUb" secondAttribute="trailing" constant="40" id="knZ-LM-aid"/>
                             <constraint firstItem="X9B-aD-RUb" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="lYf-CT-6tq"/>
+                            <constraint firstItem="meK-nN-AaB" firstAttribute="centerX" secondItem="TmT-nG-9Wh" secondAttribute="centerX" id="lZU-mz-zjF"/>
                             <constraint firstItem="X9B-aD-RUb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="nGx-H4-e9q"/>
                             <constraint firstItem="iSU-a6-u1q" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="nnm-BV-9sr"/>
                             <constraint firstItem="TmT-nG-9Wh" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="oMz-Ry-vyg"/>
@@ -194,13 +207,17 @@
                                 <exclude reference="Zh5-az-Hc2"/>
                                 <exclude reference="h5W-re-QlS"/>
                                 <exclude reference="xnG-vu-XQf"/>
-                                <exclude reference="RrO-Mk-4x8"/>
                                 <exclude reference="oMz-Ry-vyg"/>
-                                <exclude reference="nnm-BV-9sr"/>
                                 <exclude reference="53t-a2-YYq"/>
+                                <exclude reference="5BW-96-XeJ"/>
+                                <exclude reference="73s-Ds-rj1"/>
+                                <exclude reference="GHH-AY-0nn"/>
                                 <exclude reference="fPs-vw-iCs"/>
-                                <exclude reference="icj-v4-PAu"/>
+                                <exclude reference="nnm-BV-9sr"/>
+                                <exclude reference="RrO-Mk-4x8"/>
+                                <exclude reference="lZU-mz-zjF"/>
                                 <exclude reference="WQ3-Zc-Axp"/>
+                                <exclude reference="knZ-LM-aid"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact">
@@ -208,9 +225,15 @@
                                 <exclude reference="IZT-ED-7cX"/>
                                 <include reference="Zh5-az-Hc2"/>
                                 <exclude reference="xnG-vu-XQf"/>
+                                <exclude reference="UMF-rE-L18"/>
                                 <include reference="53t-a2-YYq"/>
+                                <include reference="73s-Ds-rj1"/>
+                                <include reference="GHH-AY-0nn"/>
+                                <exclude reference="jdP-Z2-qJa"/>
                                 <exclude reference="lYf-CT-6tq"/>
                                 <exclude reference="nGx-H4-e9q"/>
+                                <exclude reference="YMv-xU-xpb"/>
+                                <include reference="lZU-mz-zjF"/>
                                 <exclude reference="4kd-7Z-7nR"/>
                             </mask>
                         </variation>
@@ -219,19 +242,21 @@
                                 <exclude reference="IZT-ED-7cX"/>
                                 <include reference="h5W-re-QlS"/>
                                 <exclude reference="tYG-ML-3Tt"/>
-                                <include reference="RrO-Mk-4x8"/>
-                                <exclude reference="YMv-xU-xpb"/>
                                 <exclude reference="UMF-rE-L18"/>
                                 <exclude reference="oMz-Ry-vyg"/>
-                                <exclude reference="QNP-4B-BDi"/>
-                                <include reference="nnm-BV-9sr"/>
+                                <include reference="5BW-96-XeJ"/>
+                                <exclude reference="eEB-Ly-qWU"/>
                                 <include reference="fPs-vw-iCs"/>
-                                <include reference="icj-v4-PAu"/>
                                 <exclude reference="jdP-Z2-qJa"/>
                                 <exclude reference="lYf-CT-6tq"/>
                                 <exclude reference="nGx-H4-e9q"/>
+                                <exclude reference="QNP-4B-BDi"/>
+                                <include reference="nnm-BV-9sr"/>
+                                <include reference="RrO-Mk-4x8"/>
+                                <exclude reference="YMv-xU-xpb"/>
                                 <exclude reference="4kd-7Z-7nR"/>
                                 <include reference="WQ3-Zc-Axp"/>
+                                <include reference="knZ-LM-aid"/>
                             </mask>
                         </variation>
                         <connections>
@@ -266,12 +291,32 @@
                         <action selector="SwipeLeft:" destination="BYZ-38-t0r" id="uom-1k-0A7"/>
                     </connections>
                 </swipeGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="Sz7-BS-EhO" userLabel="Long Press Gesture RecognizerSquareUpLeft">
+                    <connections>
+                        <action selector="LongButtonSquareUpLeft:" destination="BYZ-38-t0r" id="0wX-Zc-eha"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="cMY-wC-wvn" userLabel="Long Press Gesture RecognizerSquareUpRight">
+                    <connections>
+                        <action selector="LongButtonSquareUpRight:" destination="BYZ-38-t0r" id="5TI-MJ-6eS"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="l4l-Yi-rKx" userLabel="Long Press Gesture RecognizerSquareDownLeft">
+                    <connections>
+                        <action selector="LongButtonSquareDownLeft:" destination="BYZ-38-t0r" id="icK-ln-hd7"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="NRp-A1-0wq" userLabel="Long Press Gesture RecognizerSquareDownRight">
+                    <connections>
+                        <action selector="LongButtonSquareDownRight:" destination="BYZ-38-t0r" id="dfM-z8-fZM"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-15" y="69.375"/>
         </scene>
     </scenes>
     <resources>
-        <image name="Arrow Up" width="13.333333015441895" height="9.6666669845581055"/>
+        <image name="Arrow Up" width="13.5" height="9.5"/>
         <image name="Plus" width="40" height="40"/>
         <image name="Selected" width="80" height="80"/>
     </resources>

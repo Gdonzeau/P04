@@ -37,6 +37,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     override func didRotate(from fromInterfaceOrientation : UIInterfaceOrientation) {
         if fromInterfaceOrientation == .portrait || fromInterfaceOrientation == .portraitUpsideDown{
+            //if fromInterfaceOrientation == .landscapeLeft || fromInterfaceOrientation == .landscapeRight{
             SwipeToShare.text = "Swipe left to share"
             Arrow.setImage(UIImage(imageLiteralResourceName: "Arrow Left"), for: .normal)
         }
@@ -47,12 +48,40 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         }
     }
     
+    
+    @IBAction func LongButtonSquareUpLeft(_ sender: UILongPressGestureRecognizer) {
+        rank = 1
+        findCamera()
+        SquareUpLeft.imageView?.contentMode = .scaleAspectFill
+        //SquareUpLeft.imageView?.contentMode = .clipsToBounds
+        
+        
+    }
+    @IBAction func LongButtonSquareUpRight(_ sender: UILongPressGestureRecognizer) {
+        rank = 2
+        findCamera()
+        SquareUpRight.imageView?.contentMode = .scaleAspectFill
+    }
+    
+    @IBAction func LongButtonSquareDownLeft(_ sender: UILongPressGestureRecognizer) {
+        rank = 3
+        findCamera()
+        SquareDownLeft.imageView?.contentMode = .scaleAspectFill
+    }
+    
+    @IBAction func LongButtonSquareDownRight(_ sender: UILongPressGestureRecognizer) {
+        rank = 4
+        findCamera()
+        SquareDownRight.imageView?.contentMode = .scaleAspectFill
+    }
+    
+    
     @IBAction func ButtonSquareUpLeft() {
         rank = 1
         findImage()
         SquareUpLeft.imageView?.contentMode = .scaleAspectFill
+        
     }
-    
     @IBAction func ButtonSquareUpRight() {
         rank = 2
         findImage()
@@ -76,6 +105,21 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         image.delegate = self
         
         image.sourceType = UIImagePickerController.SourceType.photoLibrary
+        //image.sourceType = UIImagePickerController.SourceType.camera
+        
+        image.allowsEditing = false
+        
+        self.present(image, animated: true)
+        {
+            // After
+        }
+    }
+    func findCamera() {
+        let image = UIImagePickerController()
+        image.delegate = self
+        
+        //image.sourceType = UIImagePickerController.SourceType.photoLibrary
+        image.sourceType = UIImagePickerController.SourceType.camera
         
         image.allowsEditing = false
         
@@ -150,26 +194,31 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     @IBAction func SwipeUp(_ sender: UISwipeGestureRecognizer) {
         if SwipeToShare.text == "Swipe up to share" {
-        print("Up")
+            print("Up")
+            
+            let renderer = UIGraphicsImageRenderer(size: FinalImage.bounds.size)
+            let image = renderer.image { ctx in
+                FinalImage.drawHierarchy(in: FinalImage.bounds, afterScreenUpdates: true)
+            }
+            
+            let items = [image]
+            let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
+            present(ac, animated: true)
         }
-        let renderer = UIGraphicsImageRenderer(size: FinalImage.bounds.size)
-        let image = renderer.image { ctx in
-            FinalImage.drawHierarchy(in: FinalImage.bounds, afterScreenUpdates: true)
-        }
-        
-        let items = [image]
-        let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
-        present(ac, animated: true)
-        
     }
     
     @IBAction func SwipeLeft(_ sender: UISwipeGestureRecognizer) {
         if SwipeToShare.text == "Swipe left to share" {
-        print("Left")
+            print("Left")
+            let renderer = UIGraphicsImageRenderer(size: FinalImage.bounds.size)
+            let image = renderer.image { ctx in
+                FinalImage.drawHierarchy(in: FinalImage.bounds, afterScreenUpdates: true)
+            }
+            
+            let items = [image]
+            let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
+            present(ac, animated: true)
         }
-        
-        
     }
-    
 }
 
