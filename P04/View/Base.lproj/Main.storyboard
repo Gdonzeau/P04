@@ -212,6 +212,10 @@
                                 <exclude reference="Zh5-az-Hc2"/>
                                 <exclude reference="h5W-re-QlS"/>
                                 <exclude reference="xnG-vu-XQf"/>
+                                <exclude reference="nnm-BV-9sr"/>
+                                <exclude reference="hDU-kH-8PH"/>
+                                <exclude reference="nGP-Bh-hDT"/>
+                                <exclude reference="oMz-Ry-vyg"/>
                                 <exclude reference="53t-a2-YYq"/>
                                 <exclude reference="5BW-96-XeJ"/>
                                 <exclude reference="73s-Ds-rj1"/>
@@ -220,10 +224,6 @@
                                 <exclude reference="fPs-vw-iCs"/>
                                 <exclude reference="RrO-Mk-4x8"/>
                                 <exclude reference="lZU-mz-zjF"/>
-                                <exclude reference="nnm-BV-9sr"/>
-                                <exclude reference="hDU-kH-8PH"/>
-                                <exclude reference="nGP-Bh-hDT"/>
-                                <exclude reference="oMz-Ry-vyg"/>
                                 <exclude reference="WQ3-Zc-Axp"/>
                                 <exclude reference="knZ-LM-aid"/>
                             </mask>
@@ -233,6 +233,7 @@
                                 <exclude reference="IZT-ED-7cX"/>
                                 <include reference="Zh5-az-Hc2"/>
                                 <exclude reference="xnG-vu-XQf"/>
+                                <exclude reference="VcF-Gg-BfW"/>
                                 <exclude reference="4Y2-QZ-1C9"/>
                                 <include reference="53t-a2-YYq"/>
                                 <exclude reference="73s-Ds-rj1"/>
@@ -242,16 +243,15 @@
                                 <exclude reference="nGx-H4-e9q"/>
                                 <exclude reference="YMv-xU-xpb"/>
                                 <include reference="lZU-mz-zjF"/>
-                                <exclude reference="VcF-Gg-BfW"/>
                                 <exclude reference="4kd-7Z-7nR"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="constraints">
-                                <exclude reference="eSG-in-Q3m"/>
-                                <exclude reference="jdP-Z2-qJa"/>
                                 <exclude reference="VcF-Gg-BfW"/>
                                 <exclude reference="nGP-Bh-hDT"/>
+                                <exclude reference="eSG-in-Q3m"/>
+                                <exclude reference="jdP-Z2-qJa"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact-widthClass=compact">
@@ -259,6 +259,10 @@
                                 <exclude reference="IZT-ED-7cX"/>
                                 <include reference="h5W-re-QlS"/>
                                 <exclude reference="tYG-ML-3Tt"/>
+                                <exclude reference="QNP-4B-BDi"/>
+                                <include reference="nnm-BV-9sr"/>
+                                <include reference="hDU-kH-8PH"/>
+                                <exclude reference="oMz-Ry-vyg"/>
                                 <exclude reference="4Y2-QZ-1C9"/>
                                 <exclude reference="5BW-96-XeJ"/>
                                 <exclude reference="73s-Ds-rj1"/>
@@ -270,10 +274,6 @@
                                 <exclude reference="nGx-H4-e9q"/>
                                 <include reference="RrO-Mk-4x8"/>
                                 <exclude reference="YMv-xU-xpb"/>
-                                <exclude reference="QNP-4B-BDi"/>
-                                <include reference="nnm-BV-9sr"/>
-                                <include reference="hDU-kH-8PH"/>
-                                <exclude reference="oMz-Ry-vyg"/>
                                 <exclude reference="4kd-7Z-7nR"/>
                                 <include reference="WQ3-Zc-Axp"/>
                                 <include reference="knZ-LM-aid"/>
@@ -282,6 +282,8 @@
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="OsX-CX-yZ1" appends="YES" id="IEg-eI-Sj2"/>
                             <outletCollection property="gestureRecognizers" destination="fHB-Oo-zMW" appends="YES" id="oUT-oW-sFd"/>
+                            <outletCollection property="gestureRecognizers" destination="boa-Cd-cP9" appends="YES" id="Fqd-7i-gSH"/>
+                            <outletCollection property="gestureRecognizers" destination="2OV-TN-ncI" appends="YES" id="hl1-L3-lAf"/>
                         </connections>
                     </view>
                     <connections>
@@ -301,7 +303,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="up" id="OsX-CX-yZ1">
+                <swipeGestureRecognizer direction="up" id="OsX-CX-yZ1" userLabel="Swipe Gesture RecognizerUp">
                     <connections>
                         <action selector="SwipeUp:" destination="BYZ-38-t0r" id="Wx7-XI-sP7"/>
                     </connections>
@@ -331,6 +333,16 @@
                         <action selector="LongButtonSquareDownRight:" destination="BYZ-38-t0r" id="dfM-z8-fZM"/>
                     </connections>
                 </pongPressGestureRecognizer>
+                <swipeGestureRecognizer direction="down" id="boa-Cd-cP9" userLabel="Swipe Gesture RecognizerDown">
+                    <connections>
+                        <action selector="SwipeDown:" destination="BYZ-38-t0r" id="xWU-PX-J1K"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="2OV-TN-ncI" userLabel="Swipe Gesture RecognizerRight">
+                    <connections>
+                        <action selector="SwipeRight:" destination="BYZ-38-t0r" id="nD8-T0-3Tt"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-15" y="69.375"/>
         </scene>

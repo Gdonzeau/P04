@@ -15,7 +15,9 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         start()
+        
         print("Début")
+        
     }
     
     @IBOutlet weak var button01: UIButton!
@@ -40,9 +42,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
             //if fromInterfaceOrientation == .landscapeLeft || fromInterfaceOrientation == .landscapeRight{
             SwipeToShare.text = "Swipe left to share"
             Arrow.setImage(UIImage(imageLiteralResourceName: "Arrow Left"), for: .normal)
-        }
-        
-        else {
+        } else {
             SwipeToShare.text = "Swipe up to share"
             Arrow.setImage(UIImage(imageLiteralResourceName: "Arrow Up"), for: .normal)
         }
@@ -109,7 +109,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         
         image.allowsEditing = false
         
-        self.present(image, animated: true)
+        present(image, animated: true)
         {
             // After
         }
@@ -123,7 +123,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         
         image.allowsEditing = false
         
-        self.present(image, animated: true)
+        present(image, animated: true)
         {
             // After
         }
@@ -145,11 +145,10 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
                 print("???")
             }
             
-        }
-        else {
+        } else {
             // Message d'erreur
         }
-        self.dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func Bouton1() {
@@ -201,23 +200,85 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
                 FinalImage.drawHierarchy(in: FinalImage.bounds, afterScreenUpdates: true)
             }
             
+            let screenHeight = UIScreen.main.bounds.height
+            var translationTransform: CGAffineTransform
+            var translationBackTransform: CGAffineTransform
+            
+            translationTransform = CGAffineTransform(translationX: 0, y: -screenHeight)
+            translationBackTransform = CGAffineTransform(translationX: 0, y: 0)
+            
+            UIView.animate(withDuration: 0.3) {
+                self.FinalImage.transform = translationTransform
+            }
+            // Envoi photo
+            
             let items = [image]
-            let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
-            present(ac, animated: true)
+            let sendPhoto = UIActivityViewController(activityItems: items, applicationActivities: nil)
+            present(sendPhoto, animated: true)
+            
+            sendPhoto.completionWithItemsHandler = { activity, success, items, error in
+                print("activity: \(String(describing: activity)), success: \(success), items: \(String(describing: items)), error: \(String(describing: error))")
+                
+                
+                UIView.animate(withDuration: 0.3) {
+                    self.FinalImage.transform = translationBackTransform
+                }
+ 
+            }
         }
     }
+    @IBAction func SwipeDown(_ sender: UISwipeGestureRecognizer) {
+        
+        var translationBackTransform: CGAffineTransform
+        
+        translationBackTransform = CGAffineTransform(translationX: 0, y: 0)
+        UIView.animate(withDuration: 0.3) {
+            self.FinalImage.transform = translationBackTransform
+        }
+    }
+    
+    @IBAction func SwipeRight(_ sender: UISwipeGestureRecognizer) {
+        
+        var translationBackTransform: CGAffineTransform
+        
+        translationBackTransform = CGAffineTransform(translationX: 0, y: 0)
+        
+        UIView.animate(withDuration: 0.3) {
+            self.FinalImage.transform = translationBackTransform
+        }
+    }
+    
     
     @IBAction func SwipeLeft(_ sender: UISwipeGestureRecognizer) {
         if SwipeToShare.text == "Swipe left to share" {
             print("Left")
+            //var uneFois = 0
             let renderer = UIGraphicsImageRenderer(size: FinalImage.bounds.size)
             let image = renderer.image { ctx in
                 FinalImage.drawHierarchy(in: FinalImage.bounds, afterScreenUpdates: true)
             }
             
+            let screenWidth = UIScreen.main.bounds.width
+            var translationTransform: CGAffineTransform
+            var translationBackTransform: CGAffineTransform
+            
+            translationTransform = CGAffineTransform(translationX: -screenWidth, y: 0)
+            translationBackTransform = CGAffineTransform(translationX: 0, y: 0)
+            UIView.animate(withDuration: 0.3) {
+                self.FinalImage.transform = translationTransform
+                print("Anim")
+            }
+            
             let items = [image]
-            let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
-            present(ac, animated: true)
+            let sendPhoto = UIActivityViewController(activityItems: items, applicationActivities: nil)
+            present(sendPhoto, animated: true)
+            
+            sendPhoto.completionWithItemsHandler = { activity, success, items, error in
+                UIView.animate(withDuration: 0.3) {
+                self.FinalImage.transform = translationBackTransform
+            }
+                
+            }
         }
     }
 }
