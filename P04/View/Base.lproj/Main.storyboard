@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina3_5" orientation="landscape" appearance="light"/>
+    <device id="retina4_0" orientation="landscape" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -21,11 +21,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="P04" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instagrid" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iSU-a6-u1q">
-                                <rect key="frame" x="140" y="0.0" width="200" height="66.5"/>
+                                <rect key="frame" x="184" y="0.0" width="200" height="66.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="OCw-zH-9uc"/>
                                     <constraint firstAttribute="width" secondItem="iSU-a6-u1q" secondAttribute="height" multiplier="3:1" id="jfg-Pc-BYA"/>
@@ -35,27 +35,27 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Bj1-oJ-Ay5" userLabel="buttons">
-                                <rect key="frame" x="380" y="10" width="80" height="300"/>
+                                <rect key="frame" x="468" y="10" width="80" height="300"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pib-2h-Ax0" userLabel="Button01">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pib-2h-Ax0" userLabel="button01">
                                         <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                         <state key="normal" image="Selected"/>
                                         <connections>
-                                            <action selector="Bouton1" destination="BYZ-38-t0r" eventType="touchUpInside" id="mAX-fh-Jzr"/>
+                                            <action selector="button01:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hFZ-sE-qS2"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="one-Og-GKl" userLabel="Button02">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="one-Og-GKl" userLabel="button02">
                                         <rect key="frame" x="0.0" y="110" width="80" height="80"/>
                                         <state key="normal" image="Selected"/>
                                         <connections>
-                                            <action selector="Bouton2" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bd5-aT-PJz"/>
+                                            <action selector="button02:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w5q-ty-CKX"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b9O-6T-sv6" userLabel="Button03">
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b9O-6T-sv6" userLabel="button03">
                                         <rect key="frame" x="0.0" y="220" width="80" height="80"/>
                                         <state key="normal" image="Selected"/>
                                         <connections>
-                                            <action selector="Bouton3" destination="BYZ-38-t0r" eventType="touchUpInside" id="86h-KY-58M"/>
+                                            <action selector="button03:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Yv-8S-7Wj"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -84,29 +84,31 @@
                                 </variation>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X9B-aD-RUb" userLabel="BlueSquare">
-                                <rect key="frame" x="106.5" y="66.5" width="233.5" height="233.5"/>
+                                <rect key="frame" x="194.5" y="66.5" width="233.5" height="233.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="V0T-Z5-Hcb" userLabel="Squares Up">
                                         <rect key="frame" x="20" y="20" width="193.5" height="87"/>
                                         <subviews>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="erT-Gj-Taw" userLabel="Square Up Left">
+                                            <button opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="erT-Gj-Taw" userLabel="Square Up Left">
                                                 <rect key="frame" x="0.0" y="0.0" width="87" height="87"/>
                                                 <color key="backgroundColor" red="0.99204939599999997" green="0.99221879239999999" blue="0.9920386672" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <gestureRecognizers/>
                                                 <state key="normal" image="Plus"/>
                                                 <connections>
-                                                    <action selector="ButtonSquareUpLeft" destination="BYZ-38-t0r" eventType="touchUpInside" id="GiX-XM-eOS"/>
-                                                    <outletCollection property="gestureRecognizers" destination="Sz7-BS-EhO" appends="YES" id="JsE-1e-2Wm"/>
+                                                    <action selector="buttonSquareUpLeft" destination="BYZ-38-t0r" eventType="touchUpInside" id="h34-no-byO"/>
+                                                    <action selector="buttonUpLeft:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Ra-Vb-Llp"/>
+                                                    <outletCollection property="gestureRecognizers" destination="ogh-6V-YTz" appends="YES" id="wg2-Cb-moV"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uwz-Gs-oTm" userLabel="Square Up Right">
+                                            <button opaque="NO" clipsSubviews="YES" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uwz-Gs-oTm" userLabel="Square Up Right">
                                                 <rect key="frame" x="107" y="0.0" width="86.5" height="87"/>
                                                 <color key="backgroundColor" red="0.99204939599999997" green="0.99221879239999999" blue="0.9920386672" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <gestureRecognizers/>
                                                 <state key="normal" image="Plus"/>
                                                 <connections>
-                                                    <action selector="ButtonSquareUpRight" destination="BYZ-38-t0r" eventType="touchUpInside" id="45f-RY-iAV"/>
-                                                    <outletCollection property="gestureRecognizers" destination="cMY-wC-wvn" appends="YES" id="0lI-Um-DDE"/>
+                                                    <action selector="buttonSquareUpRight" destination="BYZ-38-t0r" eventType="touchUpInside" id="Q30-Bc-x9p"/>
+                                                    <action selector="buttonUpRight:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gBV-nq-Q99"/>
+                                                    <outletCollection property="gestureRecognizers" destination="cMY-wC-wvn" appends="YES" id="qVO-yu-dOU"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -114,24 +116,26 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="DZN-AU-FcB" userLabel="Squares Down">
                                         <rect key="frame" x="20" y="127" width="193.5" height="86.5"/>
                                         <subviews>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nAw-wX-JaS" userLabel="Square Down Left">
+                                            <button opaque="NO" clipsSubviews="YES" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nAw-wX-JaS" userLabel="Square Down Left">
                                                 <rect key="frame" x="0.0" y="0.0" width="87" height="86.5"/>
                                                 <color key="backgroundColor" red="0.99204939599999997" green="0.99221879239999999" blue="0.9920386672" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <gestureRecognizers/>
                                                 <state key="normal" image="Plus"/>
                                                 <connections>
-                                                    <action selector="ButtonSquareDownLeft" destination="BYZ-38-t0r" eventType="touchUpInside" id="9UT-gE-x4D"/>
-                                                    <outletCollection property="gestureRecognizers" destination="l4l-Yi-rKx" appends="YES" id="ebW-bG-jNM"/>
+                                                    <action selector="buttonDownLeft:" destination="BYZ-38-t0r" eventType="touchUpInside" id="88E-Wf-icJ"/>
+                                                    <action selector="buttonSquareDownLeft" destination="BYZ-38-t0r" eventType="touchUpInside" id="1o7-Cb-dVb"/>
+                                                    <outletCollection property="gestureRecognizers" destination="l4l-Yi-rKx" appends="YES" id="CZ9-sJ-Qan"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="44Y-az-hfK" userLabel="Square Down Right">
+                                            <button opaque="NO" clipsSubviews="YES" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="44Y-az-hfK" userLabel="Square Down Right">
                                                 <rect key="frame" x="107" y="0.0" width="86.5" height="86.5"/>
                                                 <color key="backgroundColor" red="0.99204939599999997" green="0.99221879239999999" blue="0.9920386672" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <gestureRecognizers/>
                                                 <state key="normal" image="Plus"/>
                                                 <connections>
-                                                    <action selector="ButtonSquareDownRight" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ppz-0M-qNK"/>
-                                                    <outletCollection property="gestureRecognizers" destination="NRp-A1-0wq" appends="YES" id="Q1T-o1-FPQ"/>
+                                                    <action selector="buttonDownRight:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fHi-AF-TZY"/>
+                                                    <action selector="buttonSquareDownRight" destination="BYZ-38-t0r" eventType="touchUpInside" id="vdt-4H-vUQ"/>
+                                                    <outletCollection property="gestureRecognizers" destination="NRp-A1-0wq" appends="YES" id="30Y-Lg-7DY"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -153,7 +157,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="meK-nN-AaB" userLabel="Arrow">
-                                <rect key="frame" x="52.5" y="135.5" width="15" height="15"/>
+                                <rect key="frame" x="96.5" y="147.5" width="15" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="meK-nN-AaB" secondAttribute="height" multiplier="1:1" id="iJF-4N-sO9"/>
                                     <constraint firstAttribute="width" constant="15" id="xLU-2O-0DV"/>
@@ -161,7 +165,7 @@
                                 <state key="normal" image="Arrow Up"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe up to share" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TmT-nG-9Wh" userLabel="Swipe to share">
-                                <rect key="frame" x="20" y="158" width="79.5" height="51"/>
+                                <rect key="frame" x="20" y="170.5" width="167.5" height="25.5"/>
                                 <fontDescription key="fontDescription" name="Delm-Medium" family="Delm" pointSize="23"/>
                                 <color key="textColor" red="0.99204939599999997" green="0.99221879239999999" blue="0.9920386672" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -204,7 +208,7 @@
                             <constraint firstItem="iSU-a6-u1q" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="nnm-BV-9sr"/>
                             <constraint firstItem="TmT-nG-9Wh" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="oMz-Ry-vyg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Bj1-oJ-Ay5" secondAttribute="bottom" constant="20" id="tYG-ML-3Tt"/>
-                            <constraint firstItem="TmT-nG-9Wh" firstAttribute="top" secondItem="meK-nN-AaB" secondAttribute="bottom" constant="7.5" id="vbG-Ie-Exw"/>
+                            <constraint firstItem="TmT-nG-9Wh" firstAttribute="top" secondItem="meK-nN-AaB" secondAttribute="bottom" constant="8" symbolic="YES" id="vbG-Ie-Exw"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="X9B-aD-RUb" secondAttribute="bottom" constant="20" id="xnG-vu-XQf"/>
                         </constraints>
                         <variation key="default">
@@ -282,67 +286,52 @@
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="OsX-CX-yZ1" appends="YES" id="IEg-eI-Sj2"/>
                             <outletCollection property="gestureRecognizers" destination="fHB-Oo-zMW" appends="YES" id="oUT-oW-sFd"/>
-                            <outletCollection property="gestureRecognizers" destination="boa-Cd-cP9" appends="YES" id="Fqd-7i-gSH"/>
-                            <outletCollection property="gestureRecognizers" destination="2OV-TN-ncI" appends="YES" id="hl1-L3-lAf"/>
                         </connections>
                     </view>
                     <connections>
-                        <outlet property="Arrow" destination="meK-nN-AaB" id="oS6-Y6-gt3"/>
-                        <outlet property="Button01" destination="pib-2h-Ax0" id="NzS-Em-VaS"/>
-                        <outlet property="Button02" destination="one-Og-GKl" id="S3t-Vd-z5r"/>
-                        <outlet property="Button03" destination="b9O-6T-sv6" id="4fG-Rp-RZq"/>
-                        <outlet property="FinalImage" destination="X9B-aD-RUb" id="VMI-rG-Njo"/>
-                        <outlet property="SquareDownLeft" destination="nAw-wX-JaS" id="DyE-HP-quN"/>
-                        <outlet property="SquareDownRight" destination="44Y-az-hfK" id="olk-wf-QPs"/>
-                        <outlet property="SquareUpLeft" destination="erT-Gj-Taw" id="MpP-7b-d4F"/>
-                        <outlet property="SquareUpRight" destination="uwz-Gs-oTm" id="ghX-FB-Zog"/>
-                        <outlet property="SwipeToShare" destination="TmT-nG-9Wh" id="nId-DS-fum"/>
+                        <outlet property="arrow" destination="meK-nN-AaB" id="Epq-6g-b0d"/>
                         <outlet property="button01" destination="pib-2h-Ax0" id="r1o-8W-DHl"/>
                         <outlet property="button02" destination="one-Og-GKl" id="Vov-gd-64A"/>
                         <outlet property="button03" destination="b9O-6T-sv6" id="oMq-H2-6wp"/>
+                        <outlet property="finalImage" destination="X9B-aD-RUb" id="6jB-pK-bVq"/>
+                        <outlet property="squareDownLeft" destination="nAw-wX-JaS" id="z9l-d8-iWG"/>
+                        <outlet property="squareDownRight" destination="44Y-az-hfK" id="LUX-be-hyO"/>
+                        <outlet property="squareUpLeft" destination="erT-Gj-Taw" id="zTc-ER-TqY"/>
+                        <outlet property="squareUpRight" destination="uwz-Gs-oTm" id="TUz-Jp-3OD"/>
+                        <outlet property="swipeToShare" destination="TmT-nG-9Wh" id="8wW-CI-Qop"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="up" id="OsX-CX-yZ1" userLabel="Swipe Gesture RecognizerUp">
                     <connections>
-                        <action selector="SwipeUp:" destination="BYZ-38-t0r" id="Wx7-XI-sP7"/>
+                        <action selector="swipeUp:" destination="BYZ-38-t0r" id="GeB-CJ-4k6"/>
                     </connections>
                 </swipeGestureRecognizer>
                 <swipeGestureRecognizer direction="left" id="fHB-Oo-zMW" userLabel="Swipe Gesture RecognizerLeft">
                     <connections>
-                        <action selector="SwipeLeft:" destination="BYZ-38-t0r" id="uom-1k-0A7"/>
+                        <action selector="swipeLeft:" destination="BYZ-38-t0r" id="bjY-u3-GBG"/>
                     </connections>
                 </swipeGestureRecognizer>
-                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="Sz7-BS-EhO" userLabel="Long Press Gesture RecognizerSquareUpLeft">
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="ogh-6V-YTz" userLabel="Long Press Gesture RecognizerSquareUpLeft">
                     <connections>
-                        <action selector="LongButtonSquareUpLeft:" destination="BYZ-38-t0r" id="0wX-Zc-eha"/>
+                        <action selector="longButtonSquareUpLeft:" destination="BYZ-38-t0r" id="O7i-Yo-WWN"/>
                     </connections>
                 </pongPressGestureRecognizer>
                 <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="cMY-wC-wvn" userLabel="Long Press Gesture RecognizerSquareUpRight">
                     <connections>
-                        <action selector="LongButtonSquareUpRight:" destination="BYZ-38-t0r" id="5TI-MJ-6eS"/>
+                        <action selector="longButtonSquareUpRight:" destination="BYZ-38-t0r" id="XRO-mr-fl6"/>
                     </connections>
                 </pongPressGestureRecognizer>
                 <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="l4l-Yi-rKx" userLabel="Long Press Gesture RecognizerSquareDownLeft">
                     <connections>
-                        <action selector="LongButtonSquareDownLeft:" destination="BYZ-38-t0r" id="icK-ln-hd7"/>
+                        <action selector="longButtonSquareDownLeft:" destination="BYZ-38-t0r" id="f3R-8D-ViR"/>
                     </connections>
                 </pongPressGestureRecognizer>
                 <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="NRp-A1-0wq" userLabel="Long Press Gesture RecognizerSquareDownRight">
                     <connections>
-                        <action selector="LongButtonSquareDownRight:" destination="BYZ-38-t0r" id="dfM-z8-fZM"/>
+                        <action selector="longButtonSquareDownRight:" destination="BYZ-38-t0r" id="We8-0T-ZA8"/>
                     </connections>
                 </pongPressGestureRecognizer>
-                <swipeGestureRecognizer direction="down" id="boa-Cd-cP9" userLabel="Swipe Gesture RecognizerDown">
-                    <connections>
-                        <action selector="SwipeDown:" destination="BYZ-38-t0r" id="xWU-PX-J1K"/>
-                    </connections>
-                </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="right" id="2OV-TN-ncI" userLabel="Swipe Gesture RecognizerRight">
-                    <connections>
-                        <action selector="SwipeRight:" destination="BYZ-38-t0r" id="nD8-T0-3Tt"/>
-                    </connections>
-                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-15" y="69.375"/>
         </scene>
