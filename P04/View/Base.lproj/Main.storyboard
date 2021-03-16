@@ -41,7 +41,6 @@
                                         <rect key="frame" x="0.0" y="0.0" width="73.5" height="74.5"/>
                                         <state key="normal" image="Selected"/>
                                         <connections>
-                                            <action selector="button01:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hFZ-sE-qS2"/>
                                             <action selector="severalButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TSL-lJ-zQw"/>
                                         </connections>
                                     </button>
@@ -49,7 +48,6 @@
                                         <rect key="frame" x="103.5" y="0.0" width="73" height="74.5"/>
                                         <state key="normal" image="Selected"/>
                                         <connections>
-                                            <action selector="button02:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w5q-ty-CKX"/>
                                             <action selector="severalButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ARN-Q9-0J5"/>
                                         </connections>
                                     </button>
@@ -57,7 +55,6 @@
                                         <rect key="frame" x="206.5" y="0.0" width="73.5" height="74.5"/>
                                         <state key="normal" image="Selected"/>
                                         <connections>
-                                            <action selector="button03:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Yv-8S-7Wj"/>
                                             <action selector="severalButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M1L-Fm-pYZ"/>
                                         </connections>
                                     </button>
@@ -98,7 +95,7 @@
                                                 <gestureRecognizers/>
                                                 <state key="normal" image="Plus"/>
                                                 <connections>
-                                                    <action selector="buttonUpLeft:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Ra-Vb-Llp"/>
+                                                    <action selector="allButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0rX-wp-Zv2"/>
                                                     <outletCollection property="gestureRecognizers" destination="ogh-6V-YTz" appends="YES" id="wg2-Cb-moV"/>
                                                 </connections>
                                             </button>
@@ -108,7 +105,7 @@
                                                 <gestureRecognizers/>
                                                 <state key="normal" image="Plus"/>
                                                 <connections>
-                                                    <action selector="buttonUpRight:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gBV-nq-Q99"/>
+                                                    <action selector="allButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UGu-no-8Xu"/>
                                                     <outletCollection property="gestureRecognizers" destination="cMY-wC-wvn" appends="YES" id="qVO-yu-dOU"/>
                                                 </connections>
                                             </button>
@@ -123,7 +120,7 @@
                                                 <gestureRecognizers/>
                                                 <state key="normal" image="Plus"/>
                                                 <connections>
-                                                    <action selector="buttonDownLeft:" destination="BYZ-38-t0r" eventType="touchUpInside" id="88E-Wf-icJ"/>
+                                                    <action selector="allButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1Co-VK-V4n"/>
                                                     <outletCollection property="gestureRecognizers" destination="l4l-Yi-rKx" appends="YES" id="CZ9-sJ-Qan"/>
                                                 </connections>
                                             </button>
@@ -133,7 +130,7 @@
                                                 <gestureRecognizers/>
                                                 <state key="normal" image="Plus"/>
                                                 <connections>
-                                                    <action selector="buttonDownRight:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fHi-AF-TZY"/>
+                                                    <action selector="allButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9PI-JV-oSb"/>
                                                     <outletCollection property="gestureRecognizers" destination="NRp-A1-0wq" appends="YES" id="30Y-Lg-7DY"/>
                                                 </connections>
                                             </button>
@@ -314,22 +311,22 @@
                 </swipeGestureRecognizer>
                 <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="ogh-6V-YTz" userLabel="Long Press Gesture RecognizerSquareUpLeft">
                     <connections>
-                        <action selector="longButtonSquareUpLeft:" destination="BYZ-38-t0r" id="O7i-Yo-WWN"/>
+                        <action selector="longAllButtons:" destination="BYZ-38-t0r" id="zAT-Tx-7bN"/>
                     </connections>
                 </pongPressGestureRecognizer>
                 <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="cMY-wC-wvn" userLabel="Long Press Gesture RecognizerSquareUpRight">
                     <connections>
-                        <action selector="longButtonSquareUpRight:" destination="BYZ-38-t0r" id="XRO-mr-fl6"/>
+                        <action selector="longAllButtons:" destination="BYZ-38-t0r" id="iuu-Lj-ZbX"/>
                     </connections>
                 </pongPressGestureRecognizer>
                 <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="l4l-Yi-rKx" userLabel="Long Press Gesture RecognizerSquareDownLeft">
                     <connections>
-                        <action selector="longButtonSquareDownLeft:" destination="BYZ-38-t0r" id="f3R-8D-ViR"/>
+                        <action selector="longAllButtons:" destination="BYZ-38-t0r" id="3CU-oh-ujO"/>
                     </connections>
                 </pongPressGestureRecognizer>
                 <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="NRp-A1-0wq" userLabel="Long Press Gesture RecognizerSquareDownRight">
                     <connections>
-                        <action selector="longButtonSquareDownRight:" destination="BYZ-38-t0r" id="We8-0T-ZA8"/>
+                        <action selector="longAllButtons:" destination="BYZ-38-t0r" id="e6K-kB-ppC"/>
                     </connections>
                 </pongPressGestureRecognizer>
                 <swipeGestureRecognizer direction="down" id="9Q7-Ep-1HE" userLabel="Swipe Gesture RecognizerDown">

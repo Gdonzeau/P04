@@ -12,6 +12,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     var index = 0
     var rank = 0
     var position = 1
+    let layOuts = ["Layout 1","Layout 2","Layout 3"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,39 +40,43 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         }
     }
     @IBAction func severalButtons(_ sender: UIButton) {
+        let buttonsArray = [button01,button02,button03]
         print("Bouton \(sender.tag) appuyé.")
+        // Boucle qui compare le tag envoyé à celui des boutons et agit en conséquence
+        // Image "Selected" si égal ou alors le Layout correspondant dans le tableau Layouts
+        
+        for i in 0..<3 {
+            if sender.tag != buttonsArray[i]?.tag {
+                buttonsArray[i]?.setImage(UIImage(imageLiteralResourceName: layOuts[i]), for: .normal)
+            } else {
+                buttonsArray[i]?.setImage(UIImage(imageLiteralResourceName: "Selected"), for: .normal)
+            }
+        }
+        switch sender.tag {
+        case 1:
+            squareUpLeft.isHidden = true
+            squareDownLeft.isHidden = false
+        case 2:
+            squareUpLeft.isHidden = false
+            squareDownLeft.isHidden = true
+        case 3:
+            squareUpLeft.isHidden = false
+            squareDownLeft.isHidden = false
+        default :
+            squareUpLeft.isHidden = true
+            squareDownLeft.isHidden = false
+        }
+        
     }
     
+    @IBAction func allButtons(_ sender: UIButton) {
+        findImage(senderTag: sender.tag)
+    }
+    @IBAction func longAllButtons(_ sender: UILongPressGestureRecognizer) {
+        guard let button = sender.view as? UIButton else { return }
+        findCamera(senderTag: button.tag)
+    }
     
-    @IBAction func longButtonSquareUpLeft(_ sender: UILongPressGestureRecognizer) {
-        guard let button = sender.view as? UIButton else { return }
-        findCamera(senderTag: button.tag)
-    }
-    @IBAction func longButtonSquareUpRight(_ sender: UILongPressGestureRecognizer) {
-        guard let button = sender.view as? UIButton else { return }
-        findCamera(senderTag: button.tag)
-    }
-    @IBAction func longButtonSquareDownLeft(_ sender: UILongPressGestureRecognizer) {
-        guard let button = sender.view as? UIButton else { return }
-        findCamera(senderTag: button.tag)
-    }
-    @IBAction func longButtonSquareDownRight(_ sender: UILongPressGestureRecognizer) {
-        guard let button = sender.view as? UIButton else { return }
-        findCamera(senderTag: button.tag)
-    }
-    @IBAction func buttonUpLeft(_ sender: UIButton) {
-        findImage(senderTag: sender.tag)
-    }
-    @IBAction func buttonUpRight(_ sender: UIButton) {
-        findImage(senderTag:sender.tag)
-    }
-    @IBAction func buttonDownLeft(_ sender: UIButton) {
-        findImage(senderTag: sender.tag)
-    }
-    @IBAction func buttonDownRight(_ sender: UIButton) {
-        findImage(senderTag: sender.tag)
-    }
-
     func findImage(senderTag:Int) {
         if let tmpButton = self.view.viewWithTag(senderTag) as? UIButton {
             button = tmpButton
@@ -107,38 +112,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
             // Message d'erreur
         }
         dismiss(animated: true, completion: nil)
-    }
-    
-    @IBAction func button01(_ sender: UIButton) {
-        position = button01.tag
-        button01.setImage(UIImage(imageLiteralResourceName: "Selected"), for: .normal)
-        button02.setImage(UIImage(imageLiteralResourceName: "Layout 2"), for: .normal)
-        button03.setImage(UIImage(imageLiteralResourceName: "Layout 3"), for: .normal)
-        squareUpLeft.isHidden = true
-        squareUpRight.isHidden = false
-        squareDownLeft.isHidden = false
-        squareDownRight.isHidden = false
-    }
-    @IBAction func button02(_ sender: UIButton) {
-        position = button02.tag
-        button01.setImage(UIImage(imageLiteralResourceName: "Layout 1"), for: .normal)
-        button02.setImage(UIImage(imageLiteralResourceName: "Selected"), for: .normal)
-        button03.setImage(UIImage(imageLiteralResourceName: "Layout 3"), for: .normal)
-        squareUpLeft.isHidden = false
-        squareUpRight.isHidden = false
-        squareDownLeft.isHidden = true
-        squareDownRight.isHidden = false
-    }
-    
-    @IBAction func button03(_ sender: UIButton) {
-        position = button03.tag
-        button01.setImage(UIImage(imageLiteralResourceName: "Layout 1"), for: .normal)
-        button02.setImage(UIImage(imageLiteralResourceName: "Layout 2"), for: .normal)
-        button03.setImage(UIImage(imageLiteralResourceName: "Selected"), for: .normal)
-        squareUpLeft.isHidden = false
-        squareUpRight.isHidden = false
-        squareDownLeft.isHidden = false
-        squareDownRight.isHidden = false
     }
     
     private func start() {
@@ -233,28 +206,18 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     func checkThatAllImagesAreFull() -> Bool {
         // Variable globale en fonction du bouton du bas choisi en dernier
         var response = true
-        // Changer la logique :
+        let squareArray = [squareUpRight,squareUpLeft,squareDownRight,squareDownLeft]
         // Si la case n'est pas isHidden et que Plus est true, refus et rouge.
-        // Trouver si c'est possible de mettre les boutons dans un tableau ou d'y avoir accès par le tag.
-        // En fait, la fonction checkButton
-        if checkButton(sender: squareUpLeft) == false && response == true {
-            response = false
+        for i in 0..<squareArray.count {
+            if checkButton(sender: squareArray[i]!) == false { // ici ! car je suis sûr
+                response = false // Si l'un des carrés n'est pas valide, la réponse devient fausse.
+                // Pas de break pour vérifier la situation de chaque carré.
+            }
         }
-        if checkButton(sender: squareDownLeft) == false && response == true {
-            response = false
-        }
-        if checkButton(sender: squareUpRight) == false && response == true {
-            response = false
-        }
-        if checkButton(sender: squareDownRight) == false && response == true {
-            response = false
-        }
-        
         return response
     }
-    
     func checkButton(sender:UIButton) -> Bool{
-        var response = true
+        var response = true // Présomption d'innocence
         if sender.isHidden == false && (sender.currentImage?.isEqual(UIImage(named:"Plus"))) == true {
             response = false
             sender.backgroundColor = #colorLiteral(red: 1, green: 0, blue: 0, alpha: 1)
