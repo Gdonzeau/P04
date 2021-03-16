@@ -14,6 +14,10 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     var position = 1
     let layOuts = ["Layout 1","Layout 2","Layout 3"]
     
+    enum State {
+        case horizontal, vertical
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         start()
@@ -70,39 +74,33 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     }
     
     @IBAction func allButtons(_ sender: UIButton) {
-        findImage(senderTag: sender.tag)
-    }
-    @IBAction func longAllButtons(_ sender: UILongPressGestureRecognizer) {
-        guard let button = sender.view as? UIButton else { return }
-        findCamera(senderTag: button.tag)
+        findMedia(senderTag: sender.tag, camera: false)
     }
     
-    func findImage(senderTag:Int) {
+    @IBAction func longAllButtons(_ sender: UILongPressGestureRecognizer) {
+        guard let button = sender.view as? UIButton else { return }
+        //findCamera(senderTag: button.tag)
+        findMedia(senderTag: button.tag, camera: true)
+    }
+    
+    func findMedia (senderTag:Int, camera:Bool) {
         if let tmpButton = self.view.viewWithTag(senderTag) as? UIButton {
             button = tmpButton
         }
         let image = UIImagePickerController()
         image.delegate = self
-        image.sourceType = UIImagePickerController.SourceType.photoLibrary
+        if camera {
+            image.sourceType = UIImagePickerController.SourceType.camera
+        } else {
+            image.sourceType = UIImagePickerController.SourceType.photoLibrary
+        }
         image.allowsEditing = false
         button.imageView?.contentMode = .scaleAspectFill
         present(image, animated: true) {
             // After
         }
     }
-    func findCamera(senderTag:Int) {
-        if let tmpButton = self.view.viewWithTag(senderTag) as? UIButton {
-            button = tmpButton
-        }
-        let image = UIImagePickerController()
-        image.delegate = self
-        image.sourceType = UIImagePickerController.SourceType.camera
-        image.allowsEditing = false
-        button.imageView?.contentMode = .scaleAspectFill
-        present(image, animated: true) {
-            // After
-        }
-    }
+    
     func imagePickerController(_ picker: UIImagePickerController,
                                didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
@@ -115,22 +113,14 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     }
     
     private func start() {
-        button01.setImage(UIImage(imageLiteralResourceName: "Selected"), for: .normal)
-        button02.setImage(UIImage(imageLiteralResourceName: "Layout 2"), for: .normal)
-        button03.setImage(UIImage(imageLiteralResourceName: "Layout 3"), for: .normal)
-        squareUpLeft.isHidden = true
-        squareUpRight.isHidden = false
-        squareDownLeft.isHidden = false
-        squareDownRight.isHidden = false
-        squareUpRight.backgroundColor = #colorLiteral(red: 0.992049396, green: 0.9922187924, blue: 0.9920386672, alpha: 1)
-        squareUpLeft.backgroundColor = #colorLiteral(red: 0.992049396, green: 0.9922187924, blue: 0.9920386672, alpha: 1)
-        squareDownRight.backgroundColor = #colorLiteral(red: 0.992049396, green: 0.9922187924, blue: 0.9920386672, alpha: 1)
-        squareDownLeft.backgroundColor = #colorLiteral(red: 0.992049396, green: 0.9922187924, blue: 0.9920386672, alpha: 1)
-        squareUpRight.setImage(UIImage(imageLiteralResourceName: "Plus"), for: .normal)
-        squareUpLeft.setImage(UIImage(imageLiteralResourceName: "Plus"), for: .normal)
-        squareDownRight.setImage(UIImage(imageLiteralResourceName: "Plus"), for: .normal)
-        squareDownLeft.setImage(UIImage(imageLiteralResourceName: "Plus"), for: .normal)
+        let squareButtons = [squareUpLeft,squareUpRight,squareDownLeft,squareDownRight]
+        severalButtons(button01)
+        for button in squareButtons {
+            button?.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+            button?.setImage(UIImage(imageLiteralResourceName: "Plus"), for: .normal)
+        }
     }
+    
     @IBAction func swipeUp(_ sender: UISwipeGestureRecognizer) {
         if swipeToShare.text == "Swipe up to share" {
             print("Up")
@@ -164,7 +154,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
             }
         }
     }
-    
     @IBAction func swipeLeft(_ sender: UISwipeGestureRecognizer) {
         if swipeToShare.text == "Swipe left to share" {
             print("Left")
@@ -197,7 +186,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
             }
         }
     }
-    
     
     @IBAction func swipeDown(_ sender: UISwipeGestureRecognizer) {
         start()
