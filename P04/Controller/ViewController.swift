@@ -233,6 +233,24 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     func checkThatAllImagesAreFull() -> Bool {
         // Variable globale en fonction du bouton du bas choisi en dernier
         var response = true
+        // Changer la logique :
+        // Si la case n'est pas isHidden et que Plus est true, refus et rouge.
+        // Trouver si c'est possible de mettre les boutons dans un tableau ou d'y avoir accès par le tag.
+        // En fait, la fonction checkButton
+        if checkButton(sender: squareUpLeft) == true && response == true {
+            response = false
+        }
+        if checkButton(sender: squareDownLeft) == true && response == true {
+            response = false
+        }
+        if checkButton(sender: squareUpRight) == true && response == true {
+            response = false
+        }
+        if checkButton(sender: squareDownRight) == true && response == true {
+            response = false
+        }
+        /*
+        
         if (squareUpRight.currentImage?.isEqual(UIImage(named:"Plus"))) == true || (squareDownRight.currentImage?.isEqual(UIImage(named:"Plus"))) == true {
             print("images à droite pas toutes remplies")
             response = false
@@ -271,7 +289,16 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
             squareUpRight.backgroundColor = #colorLiteral(red: 0.992049396, green: 0.9922187924, blue: 0.9920386672, alpha: 1)
         }
         print(String(describing: squareDownLeft.currentImage?.isEqual(UIImage(named:"Plus"))))
-        
+        */
+        return response
+    }
+    
+    func checkButton(sender:UIButton) -> Bool{
+        var response = true
+        if sender.isHidden != true && (sender.currentImage?.isEqual(UIImage(named:"Plus"))) == true {
+            response = false
+            sender.backgroundColor = #colorLiteral(red: 1, green: 0, blue: 0, alpha: 1)
+        }
         return response
     }
 }
