@@ -42,6 +42,7 @@
                                         <state key="normal" image="Selected"/>
                                         <connections>
                                             <action selector="button01:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hFZ-sE-qS2"/>
+                                            <action selector="severalButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TSL-lJ-zQw"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="one-Og-GKl" userLabel="button02">
@@ -49,6 +50,7 @@
                                         <state key="normal" image="Selected"/>
                                         <connections>
                                             <action selector="button02:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w5q-ty-CKX"/>
+                                            <action selector="severalButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ARN-Q9-0J5"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b9O-6T-sv6" userLabel="button03">
@@ -56,6 +58,7 @@
                                         <state key="normal" image="Selected"/>
                                         <connections>
                                             <action selector="button03:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Yv-8S-7Wj"/>
+                                            <action selector="severalButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M1L-Fm-pYZ"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -212,18 +215,18 @@
                                 <exclude reference="Zh5-az-Hc2"/>
                                 <exclude reference="h5W-re-QlS"/>
                                 <exclude reference="xnG-vu-XQf"/>
+                                <exclude reference="nnm-BV-9sr"/>
                                 <exclude reference="hDU-kH-8PH"/>
                                 <exclude reference="nGP-Bh-hDT"/>
                                 <exclude reference="oMz-Ry-vyg"/>
-                                <exclude reference="RrO-Mk-4x8"/>
-                                <exclude reference="lZU-mz-zjF"/>
-                                <exclude reference="nnm-BV-9sr"/>
                                 <exclude reference="53t-a2-YYq"/>
                                 <exclude reference="5BW-96-XeJ"/>
                                 <exclude reference="73s-Ds-rj1"/>
                                 <exclude reference="L1A-4C-mNL"/>
                                 <exclude reference="aWn-gA-BSm"/>
                                 <exclude reference="fPs-vw-iCs"/>
+                                <exclude reference="RrO-Mk-4x8"/>
+                                <exclude reference="lZU-mz-zjF"/>
                                 <exclude reference="WQ3-Zc-Axp"/>
                                 <exclude reference="knZ-LM-aid"/>
                             </mask>
@@ -234,8 +237,6 @@
                                 <include reference="Zh5-az-Hc2"/>
                                 <exclude reference="xnG-vu-XQf"/>
                                 <exclude reference="VcF-Gg-BfW"/>
-                                <exclude reference="YMv-xU-xpb"/>
-                                <include reference="lZU-mz-zjF"/>
                                 <exclude reference="4Y2-QZ-1C9"/>
                                 <include reference="53t-a2-YYq"/>
                                 <exclude reference="73s-Ds-rj1"/>
@@ -243,6 +244,8 @@
                                 <exclude reference="jdP-Z2-qJa"/>
                                 <exclude reference="lYf-CT-6tq"/>
                                 <exclude reference="nGx-H4-e9q"/>
+                                <exclude reference="YMv-xU-xpb"/>
+                                <include reference="lZU-mz-zjF"/>
                                 <exclude reference="4kd-7Z-7nR"/>
                             </mask>
                         </variation>
@@ -259,12 +262,10 @@
                                 <exclude reference="IZT-ED-7cX"/>
                                 <include reference="h5W-re-QlS"/>
                                 <exclude reference="tYG-ML-3Tt"/>
-                                <include reference="hDU-kH-8PH"/>
-                                <exclude reference="oMz-Ry-vyg"/>
-                                <include reference="RrO-Mk-4x8"/>
-                                <exclude reference="YMv-xU-xpb"/>
                                 <exclude reference="QNP-4B-BDi"/>
                                 <include reference="nnm-BV-9sr"/>
+                                <include reference="hDU-kH-8PH"/>
+                                <exclude reference="oMz-Ry-vyg"/>
                                 <exclude reference="4Y2-QZ-1C9"/>
                                 <exclude reference="5BW-96-XeJ"/>
                                 <exclude reference="73s-Ds-rj1"/>
@@ -274,6 +275,8 @@
                                 <exclude reference="jdP-Z2-qJa"/>
                                 <exclude reference="lYf-CT-6tq"/>
                                 <exclude reference="nGx-H4-e9q"/>
+                                <include reference="RrO-Mk-4x8"/>
+                                <exclude reference="YMv-xU-xpb"/>
                                 <exclude reference="4kd-7Z-7nR"/>
                                 <include reference="WQ3-Zc-Axp"/>
                                 <include reference="knZ-LM-aid"/>

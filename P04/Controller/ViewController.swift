@@ -12,7 +12,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     var index = 0
     var rank = 0
     var position = 1
-    var oldPosition = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +38,11 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
             arrow.setImage(UIImage(imageLiteralResourceName: "Arrow Up"), for: .normal)
         }
     }
+    @IBAction func severalButtons(_ sender: UIButton) {
+        print("Bouton \(sender.tag) appuyé.")
+    }
+    
+    
     @IBAction func longButtonSquareUpLeft(_ sender: UILongPressGestureRecognizer) {
         guard let button = sender.view as? UIButton else { return }
         findCamera(senderTag: button.tag)
@@ -181,12 +185,10 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
                         self.finalImage.transform = translationBackTransform
                     }
                 }
-                
             }
             else {
                 print("Il manque des images")
             }
-           
         }
     }
     
@@ -216,12 +218,10 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
                         self.finalImage.transform = translationBackTransform
                     }
                 }
-                
             }
             else {
                 print("Il manque des images")
             }
-           
         }
     }
     
@@ -237,65 +237,25 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         // Si la case n'est pas isHidden et que Plus est true, refus et rouge.
         // Trouver si c'est possible de mettre les boutons dans un tableau ou d'y avoir accès par le tag.
         // En fait, la fonction checkButton
-        if checkButton(sender: squareUpLeft) == true && response == true {
+        if checkButton(sender: squareUpLeft) == false && response == true {
             response = false
         }
-        if checkButton(sender: squareDownLeft) == true && response == true {
+        if checkButton(sender: squareDownLeft) == false && response == true {
             response = false
         }
-        if checkButton(sender: squareUpRight) == true && response == true {
+        if checkButton(sender: squareUpRight) == false && response == true {
             response = false
         }
-        if checkButton(sender: squareDownRight) == true && response == true {
+        if checkButton(sender: squareDownRight) == false && response == true {
             response = false
-        }
-        /*
-        
-        if (squareUpRight.currentImage?.isEqual(UIImage(named:"Plus"))) == true || (squareDownRight.currentImage?.isEqual(UIImage(named:"Plus"))) == true {
-            print("images à droite pas toutes remplies")
-            response = false
-        }
-        if  (squareUpLeft.currentImage?.isEqual(UIImage(named:"Plus"))) == true && position != 1 {
-            print("Pas de nouvelle image en haut à gauche")
-            response = false
-        }
-        if (squareDownLeft.currentImage?.isEqual(UIImage(named:"Plus"))) == true && position != 2 {
-            print("Pas de nouvelle image en bas à gauche")
-            response = false
-        }
-        if ((squareUpLeft.currentImage?.isEqual(UIImage(named: "yourImageName"))) == true) {
-            print("Hello")
-        }
-            
-        if (squareUpRight.currentImage?.isEqual(UIImage(named:"Plus"))) == true {
-            squareUpRight.backgroundColor = #colorLiteral(red: 1, green: 0, blue: 0, alpha: 1)
-        } else {
-            squareUpRight.backgroundColor = #colorLiteral(red: 0.992049396, green: 0.9922187924, blue: 0.9920386672, alpha: 1)
         }
         
-        if (squareUpLeft.currentImage?.isEqual(UIImage(named:"Plus"))) == true {
-            squareUpLeft.backgroundColor = #colorLiteral(red: 1, green: 0, blue: 0, alpha: 1)
-        } else {
-            squareUpRight.backgroundColor = #colorLiteral(red: 0.992049396, green: 0.9922187924, blue: 0.9920386672, alpha: 1)
-        }
-        if (squareDownRight.currentImage?.isEqual(UIImage(named:"Plus"))) == true {
-            squareDownRight.backgroundColor = #colorLiteral(red: 1, green: 0, blue: 0, alpha: 1)
-        } else {
-            squareUpRight.backgroundColor = #colorLiteral(red: 0.992049396, green: 0.9922187924, blue: 0.9920386672, alpha: 1)
-        }
-        if (squareDownLeft.currentImage?.isEqual(UIImage(named:"Plus"))) == true {
-            squareDownLeft.backgroundColor = #colorLiteral(red: 1, green: 0, blue: 0, alpha: 1)
-        } else {
-            squareUpRight.backgroundColor = #colorLiteral(red: 0.992049396, green: 0.9922187924, blue: 0.9920386672, alpha: 1)
-        }
-        print(String(describing: squareDownLeft.currentImage?.isEqual(UIImage(named:"Plus"))))
-        */
         return response
     }
     
     func checkButton(sender:UIButton) -> Bool{
         var response = true
-        if sender.isHidden != true && (sender.currentImage?.isEqual(UIImage(named:"Plus"))) == true {
+        if sender.isHidden == false && (sender.currentImage?.isEqual(UIImage(named:"Plus"))) == true {
             response = false
             sender.backgroundColor = #colorLiteral(red: 1, green: 0, blue: 0, alpha: 1)
         }
