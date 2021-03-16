@@ -301,12 +301,12 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="up" id="OsX-CX-yZ1" userLabel="Swipe Gesture RecognizerUp">
                     <connections>
-                        <action selector="swipeUp:" destination="BYZ-38-t0r" id="GeB-CJ-4k6"/>
+                        <action selector="sendImage:" destination="BYZ-38-t0r" id="yRR-WL-Q1E"/>
                     </connections>
                 </swipeGestureRecognizer>
                 <swipeGestureRecognizer direction="left" id="fHB-Oo-zMW" userLabel="Swipe Gesture RecognizerLeft">
                     <connections>
-                        <action selector="swipeLeft:" destination="BYZ-38-t0r" id="bjY-u3-GBG"/>
+                        <action selector="sendImage:" destination="BYZ-38-t0r" id="pBu-O4-CA4"/>
                     </connections>
                 </swipeGestureRecognizer>
                 <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="ogh-6V-YTz" userLabel="Long Press Gesture RecognizerSquareUpLeft">

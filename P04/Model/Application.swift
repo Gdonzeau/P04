@@ -9,4 +9,9 @@ import Foundation
 
 class Application {
     
+    var state:State = .vertical
+    
+    enum State {
+        case horizontal, vertical
+    }
 }
