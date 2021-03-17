@@ -39,21 +39,24 @@
                                 <subviews>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pib-2h-Ax0" userLabel="button01">
                                         <rect key="frame" x="0.0" y="0.0" width="73.5" height="74.5"/>
-                                        <state key="normal" image="Selected"/>
+                                        <state key="normal" image="Layout 1"/>
+                                        <state key="selected" image="Selected"/>
                                         <connections>
                                             <action selector="severalButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TSL-lJ-zQw"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="one-Og-GKl" userLabel="button02">
                                         <rect key="frame" x="103.5" y="0.0" width="73" height="74.5"/>
-                                        <state key="normal" image="Selected"/>
+                                        <state key="normal" image="Layout 2"/>
+                                        <state key="selected" image="Selected"/>
                                         <connections>
                                             <action selector="severalButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ARN-Q9-0J5"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b9O-6T-sv6" userLabel="button03">
                                         <rect key="frame" x="206.5" y="0.0" width="73.5" height="74.5"/>
-                                        <state key="normal" image="Selected"/>
+                                        <state key="normal" image="Layout 3"/>
+                                        <state key="selected" image="Selected"/>
                                         <connections>
                                             <action selector="severalButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M1L-Fm-pYZ"/>
                                         </connections>
@@ -287,26 +290,26 @@
                     </view>
                     <connections>
                         <outlet property="arrow" destination="meK-nN-AaB" id="Epq-6g-b0d"/>
-                        <outlet property="button01" destination="pib-2h-Ax0" id="r1o-8W-DHl"/>
-                        <outlet property="button02" destination="one-Og-GKl" id="Vov-gd-64A"/>
-                        <outlet property="button03" destination="b9O-6T-sv6" id="oMq-H2-6wp"/>
                         <outlet property="finalImage" destination="X9B-aD-RUb" id="6jB-pK-bVq"/>
-                        <outlet property="squareDownLeft" destination="nAw-wX-JaS" id="z9l-d8-iWG"/>
-                        <outlet property="squareDownRight" destination="44Y-az-hfK" id="LUX-be-hyO"/>
-                        <outlet property="squareUpLeft" destination="erT-Gj-Taw" id="zTc-ER-TqY"/>
-                        <outlet property="squareUpRight" destination="uwz-Gs-oTm" id="TUz-Jp-3OD"/>
                         <outlet property="swipeToShare" destination="TmT-nG-9Wh" id="8wW-CI-Qop"/>
+                        <outletCollection property="buttonsDown" destination="pib-2h-Ax0" collectionClass="NSMutableArray" id="blP-CH-ixh"/>
+                        <outletCollection property="buttonsDown" destination="one-Og-GKl" collectionClass="NSMutableArray" id="hb5-AN-tdC"/>
+                        <outletCollection property="buttonsDown" destination="b9O-6T-sv6" collectionClass="NSMutableArray" id="1hu-Nq-IxM"/>
+                        <outletCollection property="squares" destination="erT-Gj-Taw" collectionClass="NSMutableArray" id="fax-FM-KVS"/>
+                        <outletCollection property="squares" destination="uwz-Gs-oTm" collectionClass="NSMutableArray" id="cwR-bG-OtH"/>
+                        <outletCollection property="squares" destination="nAw-wX-JaS" collectionClass="NSMutableArray" id="727-Bb-5sN"/>
+                        <outletCollection property="squares" destination="44Y-az-hfK" collectionClass="NSMutableArray" id="28B-wG-Tra"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="up" id="OsX-CX-yZ1" userLabel="Swipe Gesture RecognizerUp">
                     <connections>
-                        <action selector="sendImage:" destination="BYZ-38-t0r" id="yRR-WL-Q1E"/>
+                        <action selector="senderImage:" destination="BYZ-38-t0r" id="CqH-XX-CAk"/>
                     </connections>
                 </swipeGestureRecognizer>
                 <swipeGestureRecognizer direction="left" id="fHB-Oo-zMW" userLabel="Swipe Gesture RecognizerLeft">
                     <connections>
-                        <action selector="sendImage:" destination="BYZ-38-t0r" id="pBu-O4-CA4"/>
+                        <action selector="senderImage:" destination="BYZ-38-t0r" id="bjx-fU-SFq"/>
                     </connections>
                 </swipeGestureRecognizer>
                 <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="ogh-6V-YTz" userLabel="Long Press Gesture RecognizerSquareUpLeft">
@@ -340,6 +343,9 @@
     </scenes>
     <resources>
         <image name="Arrow Up" width="13.5" height="9.5"/>
+        <image name="Layout 1" width="80" height="80"/>
+        <image name="Layout 2" width="80" height="80"/>
+        <image name="Layout 3" width="80" height="80"/>
         <image name="Plus" width="40" height="40"/>
         <image name="Selected" width="80" height="80"/>
     </resources>

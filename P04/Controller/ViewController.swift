@@ -8,35 +8,21 @@
 import UIKit
 
 class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-    var button = UIButton() // Square or rectangle pressed to receive photo
-   
+    var buttonPlus = UIButton() // Square or rectangle pressed to receive photo
     var application = Application()
-    
-    
-    /*
-    alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
-    NSLog("The \"OK\" alert occured.")
-    }))
-    self.present(alert, animated: true, completion: nil)
-    */
     
     override func viewDidLoad() {
         super.viewDidLoad()
         start()
     }
     
-    @IBOutlet weak var button01: UIButton!
-    @IBOutlet weak var button02: UIButton!
-    @IBOutlet weak var button03: UIButton!
-    @IBOutlet weak var squareUpLeft: UIButton!
-    @IBOutlet weak var squareUpRight: UIButton!
-    @IBOutlet weak var squareDownLeft: UIButton!
-    @IBOutlet weak var squareDownRight: UIButton!
+    @IBOutlet var buttonsDown: [UIButton]!
+    @IBOutlet var squares: [UIButton]!
     @IBOutlet weak var swipeToShare: UILabel!
     @IBOutlet weak var arrow: UIButton!
     @IBOutlet weak var finalImage: UIView!
     
-    override func didRotate(from fromInterfaceOrientation : UIInterfaceOrientation) {
+    override func didRotate(from fromInterfaceOrientation : UIInterfaceOrientation) { // Text changes depending of device's orientation
         if fromInterfaceOrientation == .portrait || fromInterfaceOrientation == .portraitUpsideDown {
             swipeToShare.text = "Swipe left to share"
             arrow.setImage(UIImage(imageLiteralResourceName: "Arrow Left"), for: .normal)
@@ -47,140 +33,104 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
             application.state = .vertical
         }
     }
-    @IBAction func severalButtons(_ sender: UIButton) { // Buttons to choose disposition
-        let buttonsArray = [button01,button02,button03]
-        let layOuts = ["Layout 1","Layout 2","Layout 3"]
+    @IBAction func severalButtons(_ sender: UIButton) { // Buttons for disposal
         print("Bouton \(sender.tag) appuyé.")
-        // Boucle qui compare le tag envoyé à celui des boutons et agit en conséquence
-        // Image "Selected" si égal ou alors le Layout correspondant dans le tableau Layouts
-        
-        for i in 0..<3 {
-            if sender.tag != buttonsArray[i]?.tag {
-                buttonsArray[i]?.setImage(UIImage(imageLiteralResourceName: layOuts[i]), for: .normal)
-            } else {
-                buttonsArray[i]?.setImage(UIImage(imageLiteralResourceName: "Selected"), for: .normal)
-            }
+        for initializing in buttonsDown {
+            initializing.isSelected = false
         }
+        sender.isSelected = true
         switch sender.tag {
         case 1:
-            squareUpLeft.isHidden = true
-            squareDownLeft.isHidden = false
+            squares[0].isHidden = true
+            squares[2].isHidden = false
         case 2:
-            squareUpLeft.isHidden = false
-            squareDownLeft.isHidden = true
+            squares[0].isHidden = false
+            squares[2].isHidden = true
         case 3:
-            squareUpLeft.isHidden = false
-            squareDownLeft.isHidden = false
+            squares[0].isHidden = false
+            squares[2].isHidden = false
         default :
-            squareUpLeft.isHidden = true
-            squareDownLeft.isHidden = false
+            squares[0].isHidden = true
+            squares[2].isHidden = false
         }
     }
     @IBAction func allButtons(_ sender: UIButton) { // Adding photo from library
         findMedia(senderTag: sender.tag, camera: false)
     }
-    
     @IBAction func longAllButtons(_ sender: UILongPressGestureRecognizer) { // To take a photo
         guard let button = sender.view as? UIButton else { return }
         findMedia(senderTag: button.tag, camera: true)
     }
-    
     func findMedia (senderTag:Int, camera:Bool) { // getting photo from library or from camera
         if let tmpButton = self.view.viewWithTag(senderTag) as? UIButton { // identifying button with its tag
-            button = tmpButton
+            buttonPlus = tmpButton
         }
-        let image = UIImagePickerController()
-        image.delegate = self
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
         if camera {
-            image.sourceType = UIImagePickerController.SourceType.camera
+            imagePickerController.sourceType = UIImagePickerController.SourceType.camera
         } else {
-            image.sourceType = UIImagePickerController.SourceType.photoLibrary
+            imagePickerController.sourceType = UIImagePickerController.SourceType.photoLibrary
         }
-        image.allowsEditing = false
-        button.imageView?.contentMode = .scaleAspectFill
-        present(image, animated: true) {
+        imagePickerController.allowsEditing = false
+        buttonPlus.imageView?.contentMode = .scaleAspectFill
+        present(imagePickerController, animated: true) {
             // After
         }
     }
-    
     func imagePickerController(_ picker: UIImagePickerController,
                                didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            button.setImage(image, for: .normal)
-            button.backgroundColor = #colorLiteral(red: 0.992049396, green: 0.9922187924, blue: 0.9920386672, alpha: 1)
+        if let imagePicked = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            buttonPlus.setImage(imagePicked, for: .normal)
+            buttonPlus.backgroundColor = #colorLiteral(red: 0.992049396, green: 0.9922187924, blue: 0.9920386672, alpha: 1)
         } else {
             // Message d'erreur
         }
         dismiss(animated: true, completion: nil)
     }
-    
     private func start() {
-        let squareButtons = [squareUpLeft,squareUpRight,squareDownLeft,squareDownRight]
-        severalButtons(button01)
-        for button in squareButtons {
-            button?.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-            button?.setImage(UIImage(imageLiteralResourceName: "Plus"), for: .normal)
+        for centralButton in squares {
+            centralButton.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+            centralButton.setImage(UIImage(imageLiteralResourceName: "Plus"), for: .normal)
         }
+        severalButtons(buttonsDown[0]) // First button taped
     }
-    @IBAction func sendImage(_ sender: UISwipeGestureRecognizer) { // Swipe up of left to send photo
+    @IBAction func senderImage(_ sender: UISwipeGestureRecognizer) { // Swipe up of left to send photo
+        // Animation's parameters
         let screenHeight = UIScreen.main.bounds.height
         let screenWidth = UIScreen.main.bounds.width
         var translationTransform: CGAffineTransform
         var translationBackTransform: CGAffineTransform
         translationBackTransform = CGAffineTransform(translationX: 0, y: 0)
-        
+        // Depending of phone's position, the animation back has to be planed
         if application.state == .vertical {
             print("Up")
             translationTransform = CGAffineTransform(translationX: 0, y: -screenHeight)
         } else {
             translationTransform = CGAffineTransform(translationX: -screenWidth, y: 0)
         }
-        if checkThatAllImagesAreFull() {
-            print("Toutes les images sont choisies")
-            let renderer = UIGraphicsImageRenderer(size: finalImage.bounds.size)
-            let image = renderer.image { ctx in
-                finalImage.drawHierarchy(in: finalImage.bounds, afterScreenUpdates: true)
-            }
-            UIView.animate(withDuration: 0.3) {
-                self.finalImage.transform = translationTransform
-            }
-            // Envoi photo
-            let items = [image]
-            let sendPhoto = UIActivityViewController(activityItems: items, applicationActivities: nil)
-            present(sendPhoto, animated: true)
-            
-            sendPhoto.completionWithItemsHandler = { activity, success, items, error in
-                UIView.animate(withDuration: 0.3) {
-                    self.finalImage.transform = translationBackTransform
-                }
-            }
+        // Animation's parameters are ready
+        if checkThatAllImagesNotHiddenAreFull() {
+            print("Toutes les images sont pleines")
+            sendingMedia(translation: translationTransform, translationBack: translationBackTransform)
         }
         else {
             print("Il manque des images") // Ici alerte
-            //alert.actions
             showAlert()
-            
         }
     }
-    
-    @IBAction func swipeDown(_ sender: UISwipeGestureRecognizer) { // Reinitialization swiping down
-        start()
-    }
-    
-    private func checkThatAllImagesAreFull() -> Bool {
-        // Variable globale en fonction du bouton du bas choisi en dernier
+    private func checkThatAllImagesNotHiddenAreFull() -> Bool {
         var response = true
-        let squareArray = [squareUpRight,squareUpLeft,squareDownRight,squareDownLeft]
         // Si la case n'est pas isHidden et que Plus est true, refus et rouge.
-        for i in 0..<squareArray.count {
-            if checkButton(sender: squareArray[i]!) == false { // ici ! car je suis sûr
+        for i in 0..<squares.count {
+            if checkButton(sender: squares[i]) == false {
                 response = false // Si l'un des carrés n'est pas valide, la réponse devient fausse.
                 // Pas de break pour vérifier la situation de chaque carré.
             }
         }
         return response
     }
-    private func checkButton(sender:UIButton) -> Bool{
+    private func checkButton(sender:UIButton) -> Bool{ // All images which are not hidden have an image which is not "Plus"
         var response = true // Présomption d'innocence
         if sender.isHidden == false && (sender.currentImage?.isEqual(UIImage(named:"Plus"))) == true {
             response = false
@@ -188,7 +138,32 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         }
         return response
     }
-    
+    func finalizingImage() -> UIImage{
+        let renderer = UIGraphicsImageRenderer(size: finalImage.bounds.size)
+        let imageFinalized = renderer.image { ctx in
+            finalImage.drawHierarchy(in: finalImage.bounds, afterScreenUpdates: true)
+        }
+        return imageFinalized
+    }
+    func sendingMedia(translation:CGAffineTransform,translationBack:CGAffineTransform) {
+        
+        UIView.animate(withDuration: 0.3) {
+            self.finalImage.transform = translation
+        }
+        // Envoi photo
+        let items = [finalizingImage()]
+        let sendPhoto = UIActivityViewController(activityItems: items, applicationActivities: nil)
+        present(sendPhoto, animated: true)
+        
+        sendPhoto.completionWithItemsHandler = { activity, success, items, error in
+            UIView.animate(withDuration: 0.3) {
+                self.finalImage.transform = translationBack
+            }
+        }
+    }
+    @IBAction func swipeDown(_ sender: UISwipeGestureRecognizer) { // Reinitialization swiping down
+        start()
+    }
     private func showAlert() {
         let alert = UIAlertController(title: "Some images are empty", message: "Please fill them.", preferredStyle: .alert)
         let action1 = UIAlertAction(title: "Sure", style: .default) { (action:UIAlertAction) in
