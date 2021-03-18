@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina3_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -8,9 +8,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Delm-Medium.otf">
-            <string>Delm-Medium</string>
-        </array>
         <array key="ThirstySoftRegular.otf">
             <string>ThirstySoftRegular</string>
         </array>
@@ -21,11 +18,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="P04" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instagrid" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iSU-a6-u1q">
-                                <rect key="frame" x="107" y="54" width="200" height="66.5"/>
+                                <rect key="frame" x="60" y="10" width="200" height="66.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="OCw-zH-9uc"/>
                                     <constraint firstAttribute="width" secondItem="iSU-a6-u1q" secondAttribute="height" multiplier="3:1" id="jfg-Pc-BYA"/>
@@ -35,10 +32,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Bj1-oJ-Ay5" userLabel="buttons">
-                                <rect key="frame" x="20" y="742.5" width="374" height="99.5"/>
+                                <rect key="frame" x="20" y="385.5" width="280" height="74.5"/>
                                 <subviews>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pib-2h-Ax0" userLabel="button01">
-                                        <rect key="frame" x="0.0" y="0.0" width="104.5" height="99.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="73.5" height="74.5"/>
                                         <state key="normal" image="Layout 1"/>
                                         <state key="selected" image="Selected"/>
                                         <connections>
@@ -46,7 +43,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="one-Og-GKl" userLabel="button02">
-                                        <rect key="frame" x="134.5" y="0.0" width="105" height="99.5"/>
+                                        <rect key="frame" x="103.5" y="0.0" width="73" height="74.5"/>
                                         <state key="normal" image="Layout 2"/>
                                         <state key="selected" image="Selected"/>
                                         <connections>
@@ -54,7 +51,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b9O-6T-sv6" userLabel="button03">
-                                        <rect key="frame" x="269.5" y="0.0" width="104.5" height="99.5"/>
+                                        <rect key="frame" x="206.5" y="0.0" width="73.5" height="74.5"/>
                                         <state key="normal" image="Layout 3"/>
                                         <state key="selected" image="Selected"/>
                                         <connections>
@@ -87,14 +84,15 @@
                                 </variation>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X9B-aD-RUb" userLabel="BlueSquare">
-                                <rect key="frame" x="40" y="281" width="334" height="334"/>
+                                <rect key="frame" x="40" y="120" width="240" height="240"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="V0T-Z5-Hcb" userLabel="Squares Up">
-                                        <rect key="frame" x="20" y="20" width="294" height="137"/>
+                                        <rect key="frame" x="20" y="20" width="200" height="90"/>
                                         <subviews>
                                             <button opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="erT-Gj-Taw" userLabel="Square Up Left">
-                                                <rect key="frame" x="0.0" y="0.0" width="137" height="137"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="wif"/>
                                                 <gestureRecognizers/>
                                                 <state key="normal" image="Plus"/>
                                                 <connections>
@@ -103,7 +101,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" clipsSubviews="YES" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uwz-Gs-oTm" userLabel="Square Up Right">
-                                                <rect key="frame" x="157" y="0.0" width="137" height="137"/>
+                                                <rect key="frame" x="110" y="0.0" width="90" height="90"/>
                                                 <color key="backgroundColor" red="0.99204939599999997" green="0.99221879239999999" blue="0.9920386672" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <gestureRecognizers/>
                                                 <state key="normal" image="Plus"/>
@@ -115,10 +113,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="DZN-AU-FcB" userLabel="Squares Down">
-                                        <rect key="frame" x="20" y="177" width="294" height="137"/>
+                                        <rect key="frame" x="20" y="130" width="200" height="90"/>
                                         <subviews>
                                             <button opaque="NO" clipsSubviews="YES" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nAw-wX-JaS" userLabel="Square Down Left">
-                                                <rect key="frame" x="0.0" y="0.0" width="137" height="137"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
                                                 <color key="backgroundColor" red="0.99204939599999997" green="0.99221879239999999" blue="0.9920386672" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <gestureRecognizers/>
                                                 <state key="normal" image="Plus"/>
@@ -128,7 +126,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" clipsSubviews="YES" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="44Y-az-hfK" userLabel="Square Down Right">
-                                                <rect key="frame" x="157" y="0.0" width="137" height="137"/>
+                                                <rect key="frame" x="110" y="0.0" width="90" height="90"/>
                                                 <color key="backgroundColor" red="0.99204939599999997" green="0.99221879239999999" blue="0.9920386672" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <gestureRecognizers/>
                                                 <state key="normal" image="Plus"/>
@@ -156,7 +154,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="UcO-gc-nf6" userLabel="Swipe+Arrow">
-                                <rect key="frame" x="136" y="224.5" width="142" height="48.5"/>
+                                <rect key="frame" x="89" y="63.5" width="142" height="48.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="meK-nN-AaB" userLabel="Arrow">
                                         <rect key="frame" x="63.5" y="0.0" width="15" height="15"/>
@@ -164,13 +162,60 @@
                                             <constraint firstAttribute="width" secondItem="meK-nN-AaB" secondAttribute="height" multiplier="1:1" id="iJF-4N-sO9"/>
                                             <constraint firstAttribute="width" constant="15" id="xLU-2O-0DV"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="11"/>
                                         <state key="normal" image="Arrow Up"/>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe up to share" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TmT-nG-9Wh" userLabel="Swipe to share">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TmT-nG-9Wh" userLabel="Swipe to share">
                                         <rect key="frame" x="0.0" y="23" width="142" height="25.5"/>
-                                        <fontDescription key="fontDescription" name="Delm-Medium" family="Delm" pointSize="23"/>
-                                        <color key="textColor" red="0.99204939599999997" green="0.99221879239999999" blue="0.9920386672" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Swipe up to share">
+                                                <attributes>
+                                                    <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="23" name="Delm-Medium"/>
+                                                    <font key="NSOriginalFont" size="23" name="Delm-Medium"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
                                         <nil key="highlightedColor"/>
+                                        <variation key="heightClass=compact-widthClass=compact">
+                                            <attributedString key="attributedText">
+                                                <fragment content="Swipe left to share">
+                                                    <attributes>
+                                                        <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <font key="NSFont" size="23" name="Delm-Medium"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </variation>
+                                        <variation key="heightClass=compact-widthClass=regular">
+                                            <attributedString key="attributedText">
+                                                <fragment content="Swipe ">
+                                                    <attributes>
+                                                        <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <font key="NSFont" size="23" name="Delm-Medium"/>
+                                                        <font key="NSOriginalFont" size="23" name="Delm-Medium"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment content="left">
+                                                    <attributes>
+                                                        <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <font key="NSFont" size="23" name="Delm-Medium"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment content=" to share">
+                                                    <attributes>
+                                                        <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <font key="NSFont" size="23" name="Delm-Medium"/>
+                                                        <font key="NSOriginalFont" size="23" name="Delm-Medium"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </variation>
                                     </label>
                                 </subviews>
                                 <variation key="heightClass=compact-widthClass=compact" spacing="28"/>
@@ -180,7 +225,7 @@
                         <color key="backgroundColor" red="0.71360510590000004" green="0.84258151049999996" blue="0.90132403370000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Bj1-oJ-Ay5" secondAttribute="trailing" constant="20" id="3wf-LA-SsN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Bj1-oJ-Ay5" secondAttribute="trailing" constant="20" identifier="Youpi" id="3wf-LA-SsN"/>
                             <constraint firstItem="Bj1-oJ-Ay5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="4kd-7Z-7nR"/>
                             <constraint firstItem="X9B-aD-RUb" firstAttribute="top" secondItem="iSU-a6-u1q" secondAttribute="bottom" id="53t-a2-YYq"/>
                             <constraint firstItem="X9B-aD-RUb" firstAttribute="leading" secondItem="UcO-gc-nf6" secondAttribute="trailing" constant="8" symbolic="YES" id="7lU-M1-qkj"/>

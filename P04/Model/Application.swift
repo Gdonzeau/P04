@@ -16,6 +16,6 @@ class Application {
         case horizontal, vertical
     }
 }
-
+var application = Application()
 
 

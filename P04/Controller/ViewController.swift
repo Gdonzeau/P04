@@ -9,50 +9,18 @@ import UIKit
 
 class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     var buttonPlus = UIButton() // Square or rectangle pressed to receive photo
-    var application = Application()
-    var position = UIDevice.current.orientation
-    
+    var imagePlus = UIImage(named: "Plus")
     override func viewDidLoad() {
         super.viewDidLoad()
         start()
-        print("Le téléphone est \(position)")
     }
-    
-    override func viewDidLayoutSubviews() {
-            if UIScreen.main.bounds.size.width < UIScreen.main.bounds.size.height {
-                print("Portrait")
-                swipeToShare.text = "Swipe up to share"
-                arrow.setImage(UIImage(imageLiteralResourceName: "Arrow Up"), for: .normal)
-                application.state = .vertical
-                
-            } else {
-                print("Landscape")
-                swipeToShare.text = "Swipe left to share"
-                arrow.setImage(UIImage(imageLiteralResourceName: "Arrow Left"), for: .normal)
-                application.state = .horizontal
-            }
-        }
-    
+  
     @IBOutlet var buttonsDown: [UIButton]!
     @IBOutlet var squares: [UIButton]!
     @IBOutlet weak var swipeToShare: UILabel!
     @IBOutlet weak var arrow: UIButton!
     @IBOutlet weak var finalImage: UIView!
     
-    
-    /*
-    override func didRotate(from fromInterfaceOrientation : UIInterfaceOrientation) { // Text changes depending of device's orientation
-        if fromInterfaceOrientation == .portrait || fromInterfaceOrientation == .portraitUpsideDown {
-            swipeToShare.text = "Swipe left to share"
-            arrow.setImage(UIImage(imageLiteralResourceName: "Arrow Left"), for: .normal)
-            application.state = .horizontal
-        } else {
-            swipeToShare.text = "Swipe up to share"
-            arrow.setImage(UIImage(imageLiteralResourceName: "Arrow Up"), for: .normal)
-            application.state = .vertical
-        }
-    }
-    */
     @IBAction func severalButtons(_ sender: UIButton) { // Buttons for disposal
         print("Bouton \(sender.tag) appuyé.")
         for initializing in buttonsDown {
@@ -109,6 +77,10 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         dismiss(animated: true, completion: nil)
     }
     private func start() {
+        if let ID = squares[0].accessibilityIdentifier { // test identification
+        print(ID)
+        }
+        
         for centralButton in squares {
             centralButton.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
             centralButton.setImage(UIImage(imageLiteralResourceName: "Plus"), for: .normal)
@@ -142,12 +114,12 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     private func checkThatAllImagesNotHiddenAreFull() -> Bool {
         var response = true
         // Si la case n'est pas isHidden et que Plus est true, refus et rouge.
-        for i in 0..<squares.count {
-            if checkButton(sender: squares[i]) == false {
+        for i in squares {
+            if checkButton(sender: i) == false {
                 response = false // Si l'un des carrés n'est pas valide, la réponse devient fausse.
                 // Pas de break pour vérifier la situation de chaque carré.
             }
-            if squares[i].backgroundColor == #colorLiteral(red: 1, green: 0, blue: 0, alpha: 1) {
+            if i.backgroundColor == #colorLiteral(red: 1, green: 0, blue: 0, alpha: 1) {
                 response = false
             }
         }
@@ -155,7 +127,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     }
     private func checkButton(sender:UIButton) -> Bool{ // All images which are not hidden have an image which is not "Plus"
         var response = true // Présomption d'innocence
-        if sender.isHidden == false && (sender.currentImage?.isEqual(UIImage(named:"Plus"))) == true {
+        if sender.isHidden == false && (sender.currentImage?.isEqual(imagePlus)) == true {
             response = false
             sender.backgroundColor = #colorLiteral(red: 1, green: 0, blue: 0, alpha: 1) // Background of empty cases becomes red to signal them
         }
