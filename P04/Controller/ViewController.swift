@@ -10,11 +10,28 @@ import UIKit
 class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     var buttonPlus = UIButton() // Square or rectangle pressed to receive photo
     var application = Application()
+    var position = UIDevice.current.orientation
     
     override func viewDidLoad() {
         super.viewDidLoad()
         start()
+        print("Le téléphone est \(position)")
     }
+    
+    override func viewDidLayoutSubviews() {
+            if UIScreen.main.bounds.size.width < UIScreen.main.bounds.size.height {
+                print("Portrait")
+                swipeToShare.text = "Swipe up to share"
+                arrow.setImage(UIImage(imageLiteralResourceName: "Arrow Up"), for: .normal)
+                application.state = .vertical
+                
+            } else {
+                print("Landscape")
+                swipeToShare.text = "Swipe left to share"
+                arrow.setImage(UIImage(imageLiteralResourceName: "Arrow Left"), for: .normal)
+                application.state = .horizontal
+            }
+        }
     
     @IBOutlet var buttonsDown: [UIButton]!
     @IBOutlet var squares: [UIButton]!
@@ -22,6 +39,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     @IBOutlet weak var arrow: UIButton!
     @IBOutlet weak var finalImage: UIView!
     
+    
+    /*
     override func didRotate(from fromInterfaceOrientation : UIInterfaceOrientation) { // Text changes depending of device's orientation
         if fromInterfaceOrientation == .portrait || fromInterfaceOrientation == .portraitUpsideDown {
             swipeToShare.text = "Swipe left to share"
@@ -33,6 +52,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
             application.state = .vertical
         }
     }
+    */
     @IBAction func severalButtons(_ sender: UIButton) { // Buttons for disposal
         print("Bouton \(sender.tag) appuyé.")
         for initializing in buttonsDown {
@@ -61,7 +81,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         guard let button = sender.view as? UIButton else { return }
         findMedia(senderTag: button.tag, camera: true)
     }
-    func findMedia (senderTag:Int, camera:Bool) { // getting photo from library or from camera
+    private func findMedia (senderTag:Int, camera:Bool) { // getting photo from library or from camera
         if let tmpButton = self.view.viewWithTag(senderTag) as? UIButton { // identifying button with its tag
             buttonPlus = tmpButton
         }
@@ -127,6 +147,9 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
                 response = false // Si l'un des carrés n'est pas valide, la réponse devient fausse.
                 // Pas de break pour vérifier la situation de chaque carré.
             }
+            if squares[i].backgroundColor == #colorLiteral(red: 1, green: 0, blue: 0, alpha: 1) {
+                response = false
+            }
         }
         return response
     }
@@ -134,19 +157,18 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         var response = true // Présomption d'innocence
         if sender.isHidden == false && (sender.currentImage?.isEqual(UIImage(named:"Plus"))) == true {
             response = false
-            sender.backgroundColor = #colorLiteral(red: 1, green: 0, blue: 0, alpha: 1)
+            sender.backgroundColor = #colorLiteral(red: 1, green: 0, blue: 0, alpha: 1) // Background of empty cases becomes red to signal them
         }
         return response
     }
-    func finalizingImage() -> UIImage{
+    private func finalizingImage() -> UIImage{
         let renderer = UIGraphicsImageRenderer(size: finalImage.bounds.size)
         let imageFinalized = renderer.image { ctx in
             finalImage.drawHierarchy(in: finalImage.bounds, afterScreenUpdates: true)
         }
         return imageFinalized
     }
-    func sendingMedia(translation:CGAffineTransform,translationBack:CGAffineTransform) {
-        
+    private func sendingMedia(translation:CGAffineTransform,translationBack:CGAffineTransform) {
         UIView.animate(withDuration: 0.3) {
             self.finalImage.transform = translation
         }
