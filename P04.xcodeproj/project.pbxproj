@@ -21,7 +21,6 @@
 		043C9F8D25F2DD2800D13F0E /* ThirstySoftRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 043C9F8925F2DD2800D13F0E /* ThirstySoftRegular.otf */; };
 		043C9F8E25F2DD2800D13F0E /* ThirstySoftRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 043C9F8925F2DD2800D13F0E /* ThirstySoftRegular.otf */; };
 		043C9F8F25F2DD2800D13F0E /* ThirstySoftRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 043C9F8925F2DD2800D13F0E /* ThirstySoftRegular.otf */; };
-		044D5AB225F4030300BC77C1 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D5AB125F4030300BC77C1 /* Application.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,7 +57,6 @@
 		043C9F7925F2A2CB00D13F0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		043C9F8825F2DD2800D13F0E /* Delm-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Delm-Medium.otf"; sourceTree = "<group>"; };
 		043C9F8925F2DD2800D13F0E /* ThirstySoftRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ThirstySoftRegular.otf; sourceTree = "<group>"; };
-		044D5AB125F4030300BC77C1 /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,7 +166,6 @@
 		044D5AB025F402E800BC77C1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				044D5AB125F4030300BC77C1 /* Application.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -310,7 +307,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				043C9F5A25F2A2C800D13F0E /* ViewController.swift in Sources */,
-				044D5AB225F4030300BC77C1 /* Application.swift in Sources */,
 				043C9F5625F2A2C800D13F0E /* AppDelegate.swift in Sources */,
 				043C9F5825F2A2C800D13F0E /* SceneDelegate.swift in Sources */,
 			);

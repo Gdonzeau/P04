@@ -91,15 +91,22 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         // Animation's parameters
         let screenHeight = UIScreen.main.bounds.height
         let screenWidth = UIScreen.main.bounds.width
-        var translationTransform: CGAffineTransform
-        var translationBackTransform: CGAffineTransform
-        translationBackTransform = CGAffineTransform(translationX: 0, y: 0)
-        // Depending of phone's position, the animation back has to be planed
-        if application.state == .vertical {
-            print("Up")
-            translationTransform = CGAffineTransform(translationX: 0, y: -screenHeight)
-        } else {
-            translationTransform = CGAffineTransform(translationX: -screenWidth, y: 0)
+        var translationTransform = CGAffineTransform(translationX: -screenWidth, y: 0)
+        let translationBackTransform = CGAffineTransform(translationX: 0, y: 0)
+        // Depending of phone's position, the animation has to be planed
+        switch sender.direction {
+        case .left :
+            if UIDevice.current.orientation.isLandscape {
+                print("Left")
+                translationTransform = CGAffineTransform(translationX: -screenWidth, y: 0)
+            }
+        case .up :
+            if UIDevice.current.orientation.isPortrait {
+                print("Up")
+                translationTransform = CGAffineTransform(translationX: 0, y: -screenHeight)
+            }
+        default :
+            print("?")
         }
         // Animation's parameters are ready
         if checkThatAllImagesNotHiddenAreFull() {
