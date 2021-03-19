@@ -320,6 +320,7 @@
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="arrow" destination="VqF-Gg-rep" id="2YC-sk-dTh"/>
                         <outlet property="finalImage" destination="X9B-aD-RUb" id="6jB-pK-bVq"/>
                         <outlet property="swipeToShare" destination="TmT-nG-9Wh" id="8wW-CI-Qop"/>
                         <outletCollection property="buttonsDown" destination="pib-2h-Ax0" collectionClass="NSMutableArray" id="blP-CH-ixh"/>
