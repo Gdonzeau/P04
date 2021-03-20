@@ -9,10 +9,12 @@ import UIKit
 
 class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     var buttonPlus = UIButton() // Square or rectangle pressed to receive photo
+    var orientation = ""
     let imagePlus = UIImage(named: "Plus") // To check if a image was choosen
     override func viewDidLoad() {
         super.viewDidLoad()
         start()
+        checkOrientation()
     }
     @IBOutlet var buttonsDown: [UIButton]! //To choose disposal for photos
     @IBOutlet var squares: [UIButton]! // The location of each photo
@@ -49,28 +51,41 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     }
     @IBAction func senderImage(_ sender: UISwipeGestureRecognizer) { // Swipe up or left to send photo
         // Animation's parameters
+        var movementAuthorized = false
         let screenHeight = UIScreen.main.bounds.height
         let screenWidth = UIScreen.main.bounds.width
         var translationTransform = CGAffineTransform(translationX: -screenWidth, y: 0)
         let translationBackTransform = CGAffineTransform(translationX: 0, y: 0)
         // Depending of phone's position, the animation is planned
+        checkOrientation()
         switch sender.direction {
         case .left :
-            if UIDevice.current.orientation.isLandscape {
+            print("left")
+            if orientation == "Paysage" {
+                print("mouvement gauche")
                 translationTransform = CGAffineTransform(translationX: -screenWidth, y: 0)
+                movementAuthorized = true
             }
         case .up :
-            if UIDevice.current.orientation.isPortrait {
+            print("up")
+            if orientation == "Portrait" {
+                print("mouvement vers le haut")
                 translationTransform = CGAffineTransform(translationX: 0, y: -screenHeight)
+                movementAuthorized = true
             }
         default :
             print("?")
         }
         // Animation's parameters are ready
         if checkThatAllImagesNotHiddenAreFull() { // If there are no images still with "Plus"
-            sendingMedia(translation: translationTransform, translationBack: translationBackTransform) //we send the photo
+            if movementAuthorized {
+                sendingMedia(translation: translationTransform, translationBack: translationBackTransform) //we send the photo
+            }
         }
         else { // if there are still images "Plus" ...
+            for test in squares {
+                print("\(test.tag) is hidden: \(test.isHidden) et \(String(describing: test.accessibilityIdentifier))")
+            }
             showAlert()
         }
     }
@@ -83,12 +98,19 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         if let imagePicked = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             buttonPlus.setImage(imagePicked, for: .normal)
             buttonPlus.backgroundColor = #colorLiteral(red: 0.992049396, green: 0.9922187924, blue: 0.9920386672, alpha: 1)
+            findingSquare()
         } else {
             // Message d'erreur
         }
         dismiss(animated: true, completion: nil)
     }
-    
+    private func findingSquare() {
+        for test in squares {
+            if test.tag == buttonPlus.tag {
+                test.accessibilityIdentifier = "Busy"
+            }
+        }
+    }
     private func findMedia (senderTag:Int, camera:Bool) { // getting photo from library or from camera
         if let tmpButton = self.view.viewWithTag(senderTag) as? UIButton { // identifying button with its tag
             buttonPlus = tmpButton
@@ -102,6 +124,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         }
         imagePickerController.allowsEditing = false
         buttonPlus.imageView?.contentMode = .scaleAspectFill
+        //buttonPlus.accessibilityIdentifier = "Busy"
         present(imagePickerController, animated: true) {
             // After
         }
@@ -110,30 +133,59 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         for centralButton in squares {
             centralButton.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
             centralButton.setImage(UIImage(imageLiteralResourceName: "Plus"), for: .normal)
+            centralButton.accessibilityIdentifier = "None"
         }
         severalButtons(buttonsDown[0]) // First button taped
     }
     private func checkThatAllImagesNotHiddenAreFull() -> Bool {
         var response = true
         // Si la case n'est pas isHidden et que Plus est true, refus et rouge.
-        for i in squares {
-            if checkButton(sender: i) == false {
+        for imageChecked in squares {
+            if imageChecked.isHidden == false && imageChecked.accessibilityIdentifier == "None" {
+                response = false
+            }
+            print("\(imageChecked.tag) is hidden: \(imageChecked.isHidden) et \(String(describing: imageChecked.accessibilityIdentifier))")
+            /*
+            if checkButton(sender: imageChecked) == false {
                 response = false // Si l'un des carrés n'est pas valide, la réponse devient fausse.
                 // Pas de break pour vérifier la situation de chaque carré.
             }
-            if i.backgroundColor == #colorLiteral(red: 1, green: 0, blue: 0, alpha: 1) {
+            if imageChecked.backgroundColor == #colorLiteral(red: 1, green: 0, blue: 0, alpha: 1) {
                 response = false
             }
+ */
         }
+        
         return response
     }
     private func checkButton(sender:UIButton) -> Bool{ // All images which are not hidden have an image which is not "Plus"
         var response = true // Présomption d'innocence
-        if sender.isHidden == false && (sender.currentImage?.isEqual(imagePlus)) == true {
+       // var checkID = ""
+        //if let accessibilityIdentifier = sender.accessibilityIdentifier {
+            if sender.isHidden == false && sender.accessibilityIdentifier == "None" {
+                response = false
+                sender.backgroundColor = #colorLiteral(red: 1, green: 0, blue: 0, alpha: 1) // Background of empty cases becomes red to signal them
+            }
+          //  checkID = accessibilityIdentifier
+       // }
+        //if sender.isHidden == false && (sender.currentImage?.isEqual(imagePlus)) == true {
+        /*
+        if sender.isHidden == false && checkID == "None" {
             response = false
             sender.backgroundColor = #colorLiteral(red: 1, green: 0, blue: 0, alpha: 1) // Background of empty cases becomes red to signal them
         }
+        */
         return response
+    }
+    private func checkOrientation() {
+        if UIScreen.main.bounds.size.width < UIScreen.main.bounds.size.height {
+            print("Portrait en ce moment")
+            orientation = "Portrait"
+        }
+        else {
+            print("Paysage en ce moment")
+            orientation = "Paysage"
+        }
     }
     private func finalizingImage() -> UIImage{
         let renderer = UIGraphicsImageRenderer(size: finalImage.bounds.size)
