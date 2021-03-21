@@ -90,13 +90,13 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         if let imagePicked = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             buttonPlus.setImage(imagePicked, for: .normal)
             buttonPlus.backgroundColor = #colorLiteral(red: 0.992049396, green: 0.9922187924, blue: 0.9920386672, alpha: 1)
-            findingSquare()
+            squareBusy()
         } else {
             // Error message
         }
         dismiss(animated: true, completion: nil)
     }
-    private func findingSquare() {
+    private func squareBusy() {
         for test in squares {
             if test.tag == buttonPlus.tag {
                 test.accessibilityIdentifier = "Busy"
