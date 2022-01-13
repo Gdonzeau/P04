@@ -173,6 +173,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         let alert = UIAlertController(title: "Some images are empty", message: "Please fill them.", preferredStyle: .alert)
         let action1 = UIAlertAction(title: "Sure", style: .default) { (action:UIAlertAction) in }
         alert.addAction(action1)
-        self.present(alert, animated: true, completion: nil)
+        present(alert, animated: true, completion: nil)
     }
 }

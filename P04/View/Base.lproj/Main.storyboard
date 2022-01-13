@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina3_5" orientation="landscape" appearance="light"/>
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -18,14 +18,14 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="P04" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Bj1-oJ-Ay5" userLabel="buttons">
-                                <rect key="frame" x="380" y="10" width="80" height="300"/>
+                                <rect key="frame" x="20" y="473.5" width="280" height="74.5"/>
                                 <subviews>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pib-2h-Ax0" userLabel="button01">
-                                        <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="73.5" height="74.5"/>
                                         <state key="normal" image="Layout 1"/>
                                         <state key="selected" image="Selected"/>
                                         <connections>
@@ -33,7 +33,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="one-Og-GKl" userLabel="button02">
-                                        <rect key="frame" x="0.0" y="110" width="80" height="80"/>
+                                        <rect key="frame" x="103.5" y="0.0" width="73" height="74.5"/>
                                         <state key="normal" image="Layout 2"/>
                                         <state key="selected" image="Selected"/>
                                         <connections>
@@ -41,7 +41,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b9O-6T-sv6" userLabel="button03">
-                                        <rect key="frame" x="0.0" y="220" width="80" height="80"/>
+                                        <rect key="frame" x="206.5" y="0.0" width="73.5" height="74.5"/>
                                         <state key="normal" image="Layout 3"/>
                                         <state key="selected" image="Selected"/>
                                         <connections>
@@ -74,13 +74,13 @@
                                 </variation>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X9B-aD-RUb" userLabel="BlueSquare">
-                                <rect key="frame" x="164.5" y="56.5" width="243.5" height="243.5"/>
+                                <rect key="frame" x="40" y="164" width="240" height="240"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="V0T-Z5-Hcb" userLabel="Squares Up">
-                                        <rect key="frame" x="20" y="20" width="203.5" height="92"/>
+                                        <rect key="frame" x="20" y="20" width="200" height="90"/>
                                         <subviews>
                                             <button opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="erT-Gj-Taw" userLabel="Square Up Left">
-                                                <rect key="frame" x="0.0" y="0.0" width="92" height="92"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="wif"/>
                                                 <gestureRecognizers/>
@@ -91,7 +91,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" clipsSubviews="YES" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uwz-Gs-oTm" userLabel="Square Up Right">
-                                                <rect key="frame" x="112" y="0.0" width="91.5" height="92"/>
+                                                <rect key="frame" x="110" y="0.0" width="90" height="90"/>
                                                 <color key="backgroundColor" red="0.99204939599999997" green="0.99221879239999999" blue="0.9920386672" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <gestureRecognizers/>
                                                 <state key="normal" image="Plus"/>
@@ -103,10 +103,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="DZN-AU-FcB" userLabel="Squares Down">
-                                        <rect key="frame" x="20" y="132" width="203.5" height="91.5"/>
+                                        <rect key="frame" x="20" y="130" width="200" height="90"/>
                                         <subviews>
                                             <button opaque="NO" clipsSubviews="YES" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nAw-wX-JaS" userLabel="Square Down Left">
-                                                <rect key="frame" x="0.0" y="0.0" width="92" height="91.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
                                                 <color key="backgroundColor" red="0.99204939599999997" green="0.99221879239999999" blue="0.9920386672" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <gestureRecognizers/>
                                                 <state key="normal" image="Plus"/>
@@ -116,7 +116,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" clipsSubviews="YES" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="44Y-az-hfK" userLabel="Square Down Right">
-                                                <rect key="frame" x="112" y="0.0" width="91.5" height="91.5"/>
+                                                <rect key="frame" x="110" y="0.0" width="90" height="90"/>
                                                 <color key="backgroundColor" red="0.99204939599999997" green="0.99221879239999999" blue="0.9920386672" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <gestureRecognizers/>
                                                 <state key="normal" image="Plus"/>
@@ -144,15 +144,15 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="UcO-gc-nf6" userLabel="Swipe+Arrow">
-                                <rect key="frame" x="5" y="145" width="151.5" height="67"/>
+                                <rect key="frame" x="5" y="113" width="310" height="43"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Arrow Up" translatesAutoresizingMaskIntoConstraints="NO" id="VqF-Gg-rep">
-                                        <rect key="frame" x="71" y="0.0" width="9.5" height="13.5"/>
+                                        <rect key="frame" x="148.5" y="0.0" width="13.5" height="9.5"/>
                                         <variation key="heightClass=compact-widthClass=compact" image="Arrow Left"/>
                                         <variation key="heightClass=compact-widthClass=regular" image="imageView:VqF-Gg-rep:image"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TmT-nG-9Wh" userLabel="Swipe to share">
-                                        <rect key="frame" x="0.0" y="41.5" width="151.5" height="25.5"/>
+                                        <rect key="frame" x="84" y="17.5" width="142" height="25.5"/>
                                         <accessibility key="accessibilityConfiguration" identifier="Label_Swipe"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Swipe up to share">
@@ -211,7 +211,7 @@
                                 <variation key="heightClass=compact-widthClass=compact" spacing="28"/>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instagrid" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iSU-a6-u1q">
-                                <rect key="frame" x="184" y="10" width="112" height="36.5"/>
+                                <rect key="frame" x="104" y="10" width="112" height="36.5"/>
                                 <accessibility key="accessibilityConfiguration" identifier="Instagrid_label"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36.5" id="5oF-k2-i4B"/>
